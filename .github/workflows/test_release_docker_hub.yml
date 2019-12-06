@@ -2,4 +2,8 @@ name: Release to Docker Hub
 
 on:
   release:
-    types: [publish
+    types: [published]
+
+jobs:
+  test:
+    nam
