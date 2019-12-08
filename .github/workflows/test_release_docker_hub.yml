@@ -6,4 +6,5 @@ on:
 
 jobs:
   test:
-    nam
+    name: Run tests
+    runs-on: ub
