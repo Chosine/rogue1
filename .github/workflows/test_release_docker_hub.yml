@@ -7,4 +7,6 @@ on:
 jobs:
   test:
     name: Run tests
-    runs-on: ub
+    runs-on: ubuntu-20.04
+    strategy:
+      mat
