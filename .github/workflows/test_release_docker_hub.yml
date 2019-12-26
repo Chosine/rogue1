@@ -26,4 +26,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         mkdir ~/.gobytecore
-        cp share/gobyte.conf.ex
+        cp share/gobyte.conf.example ~/.gobytecore/gobyte.conf
+
+    -
