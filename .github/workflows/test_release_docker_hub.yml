@@ -28,4 +28,6 @@ jobs:
         mkdir ~/.gobytecore
         cp share/gobyte.conf.example ~/.gobytecore/gobyte.conf
 
-    -
+    - name: Run tests
+      run: |
+  
