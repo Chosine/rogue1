@@ -31,4 +31,4 @@ jobs:
     - name: Run tests
       run: |
         py.test -svv test/unit/
-  
+        find ./lib ./test ./bin 
