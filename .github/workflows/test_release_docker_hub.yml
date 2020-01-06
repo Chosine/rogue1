@@ -40,4 +40,5 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    
+    - name: Set up QEMU
+      use
