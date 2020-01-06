@@ -35,4 +35,6 @@ jobs:
 
   release:
     name: Release to Docker Hub
-    runs-on: ubuntu
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Chec
