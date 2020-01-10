@@ -50,4 +50,5 @@ jobs:
       uses: actions/cache@v2
       with:
         path: /tmp/.buildx-cache
-        key: ${{ runner.
+        key: ${{ runner.os }}-buildx-${{ github.sha }}
+        res
