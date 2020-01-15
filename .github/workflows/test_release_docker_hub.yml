@@ -55,3 +55,4 @@ jobs:
           ${{ runner.os }}-buildx-
 
     - name: Login to DockerHub
+      uses: docker/login-a
