@@ -66,4 +66,6 @@ jobs:
       with:
         images: gobytecoin/sentinel
         tag-semver: |
- 
+          {{version}}
+
+    - na
