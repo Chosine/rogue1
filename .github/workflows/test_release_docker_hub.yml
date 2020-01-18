@@ -68,4 +68,5 @@ jobs:
         tag-semver: |
           {{version}}
 
-    - na
+    - name: Build and push
+     
