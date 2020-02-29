@@ -90,4 +90,4 @@ jobs:
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
     - name: Image digest
-      run: echo ${{ steps.docke
+      run: echo ${{ steps.docker_build.outputs.digest }}
