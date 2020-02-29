@@ -90,4 +90,4 @@ jobs:
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
     - name: Image digest
-      r
+      run: echo ${{ steps.docke
