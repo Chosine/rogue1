@@ -89,4 +89,5 @@ jobs:
         rm -rf /tmp/.buildx-cache
         mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
-    - na
+    - name: Image digest
+      r
