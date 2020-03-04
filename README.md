@@ -45,3 +45,29 @@ Clone the Sentinel repo and install Python dependencies.
     $ ./venv/bin/pip install -r requirements.txt
 
 ## Usage
+
+Sentinel is "used" as a script called from cron every minute.
+
+### Set up Cron
+
+Set up a crontab entry to call Sentinel every minute:
+
+    $ crontab -e
+
+In the crontab editor, add the lines below, replacing '/path/to/sentinel' to the path where you cloned sentinel to:
+
+    * * * * * cd /home/gobyte/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1
+
+### Test Configuration
+
+Test the config by running tests:
+
+    $ ./venv/bin/py.test ./test
+
+With all tests passing and crontab setup, Sentinel will stay in sync with gobyted and the installation is complete
+
+## Configuration
+
+An alternative (non-default) path to the `gobyte.conf` file can be specified in `sentinel.conf`:
+
+    gobyte_conf=/home/gobyte/.gobytecore/gobyte.conf
