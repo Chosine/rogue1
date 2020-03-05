@@ -71,3 +71,30 @@ With all tests passing and crontab setup, Sentinel will stay in sync with gobyte
 An alternative (non-default) path to the `gobyte.conf` file can be specified in `sentinel.conf`:
 
     gobyte_conf=/home/gobyte/.gobytecore/gobyte.conf
+
+## Troubleshooting
+
+To view debug output, set the `SENTINEL_DEBUG` environment variable to anything non-zero, then run the script manually:
+
+    $ SENTINEL_DEBUG=1 ./venv/bin/python bin/sentinel.py
+
+## Maintainer
+
+Dash [@nmarley](https://github.com/nmarley)
+GoByte [GoByteDev](https://github.com/gobytecoin)
+
+## Contributing
+
+Please follow the [GoByteCore guidelines for contributing](https://github.com/gobytecoin/gobyte/blob/master/CONTRIBUTING.md).
+
+Specifically:
+
+* [Contributor Workflow](https://github.com/gobytecoin/gobyte/blob/master/CONTRIBUTING.md#contributor-workflow)
+
+    To contribute a patch, the workflow is as follows:
+
+    * Fork repository
+    * Create topic branch
+    * Commit patches
+
+    In general commits should be atomic and diffs should be easy to read. For this reason do not mix any formatting fixes or code moves with actual code changes.
