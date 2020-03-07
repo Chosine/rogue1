@@ -4,4 +4,4 @@ from pprint import pprint
 import re
 import sys
 import os
-sys
+sys.path.append(os.path.normpath(
