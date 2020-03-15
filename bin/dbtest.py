@@ -4,4 +4,4 @@ from pprint import pprint
 import re
 import sys
 import os
-sys.path.append(os.path.normpath(
+sys.path.append(os.path.normpath(os.path.join(os.path.dirname(_
