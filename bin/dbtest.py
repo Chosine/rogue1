@@ -4,4 +4,5 @@ from pprint import pprint
 import re
 import sys
 import os
-sys.path.append(os.path.normpath(os.path.join(os.path.dirname(_
+sys.path.append(os.path.normpath(os.path.join(os.path.dirname(__file__), '../lib')))
+impor
