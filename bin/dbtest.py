@@ -11,3 +11,5 @@ from models import VoteSignals, VoteOutcomes
 from peewee import PeeweeException  # , OperationalError, IntegrityError
 from gobyted import GoByteDaemon
 import gobytelib
+from decimal import Decimal
+gobyted
