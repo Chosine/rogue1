@@ -6,4 +6,4 @@ import sys
 import os
 sys.path.append(os.path.normpath(os.path.join(os.path.dirname(__file__), '../lib')))
 import config
-from models import Superblock, Proposal, GovernanceObj
+from models import Superblock, Proposal, GovernanceObject, Setting, Signal, Vote, Outco
