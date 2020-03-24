@@ -12,4 +12,4 @@ from peewee import PeeweeException  # , OperationalError, IntegrityError
 from gobyted import GoByteDaemon
 import gobytelib
 from decimal import Decimal
-gobyted
+gobyted = GoByteDaemon.from_gobyte_conf(co
