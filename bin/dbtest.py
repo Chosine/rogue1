@@ -9,4 +9,5 @@ import config
 from models import Superblock, Proposal, GovernanceObject, Setting, Signal, Vote, Outcome
 from models import VoteSignals, VoteOutcomes
 from peewee import PeeweeException  # , OperationalError, IntegrityError
-from gobyted import GoB
+from gobyted import GoByteDaemon
+import gobytelib
