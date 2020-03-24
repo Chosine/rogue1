@@ -7,4 +7,5 @@ import os
 sys.path.append(os.path.normpath(os.path.join(os.path.dirname(__file__), '../lib')))
 import config
 from models import Superblock, Proposal, GovernanceObject, Setting, Signal, Vote, Outcome
-from models import VoteSi
+from models import VoteSignals, VoteOutcomes
+fro
