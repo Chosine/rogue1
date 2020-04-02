@@ -18,3 +18,5 @@ import misc
 # do stuff here
 
 pr = Proposal(
+    name='proposal7',
+    url='
