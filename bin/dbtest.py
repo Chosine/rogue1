@@ -20,4 +20,4 @@ import misc
 pr = Proposal(
     name='proposal7',
     url='https://gobytecentral.com/proposal7',
-    payment_address='y
+    payment_address='yTC62huR4YQEPn9AJHjnQxxreH
