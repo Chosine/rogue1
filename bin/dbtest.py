@@ -14,4 +14,7 @@ import gobytelib
 from decimal import Decimal
 gobyted = GoByteDaemon.from_gobyte_conf(config.gobyte_conf)
 import misc
-# =========================================================================
+# ==============================================================================
+# do stuff here
+
+pr = Proposal(
