@@ -19,4 +19,4 @@ import misc
 
 pr = Proposal(
     name='proposal7',
-    url='
+    url='https://gobytecentral.com/proposal7'
