@@ -28,4 +28,4 @@ pr = Proposal(
 
 # sb = Superblock(
 #     event_block_height = 62500,
-#     payme
+#     payment_addresses = "yYe8KwyaUu5YswSY
