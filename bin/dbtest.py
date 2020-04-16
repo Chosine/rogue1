@@ -36,4 +36,4 @@ pr = Proposal(
 # TODO: make this a test, mock 'gobyted' and tie a test block height to a
 # timestamp, ensure only unit testing a within_window method
 #
-# also, create the `within_wind
+# also, create the `within_window` or similar method & use
