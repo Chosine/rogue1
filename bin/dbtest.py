@@ -39,4 +39,4 @@ pr = Proposal(
 # also, create the `within_window` or similar method & use that.
 #
 bh = 131112
-bh_epoch
+bh_epoch = gobyted.block_height_to_epoch(
