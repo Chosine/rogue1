@@ -43,4 +43,6 @@ bh_epoch = gobyted.block_height_to_epoch(bh)
 
 fudge = 72000
 window_start = 1483689082 - fudge
-window
+window_end = 1483753726 + fudge
+
+p
