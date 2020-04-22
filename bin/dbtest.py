@@ -45,4 +45,5 @@ fudge = 72000
 window_start = 1483689082 - fudge
 window_end = 1483753726 + fudge
 
-print("Window start: %s" % mi
+print("Window start: %s" % misc.epoch2str(window_start))
+p
