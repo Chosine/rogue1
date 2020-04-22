@@ -45,4 +45,4 @@ fudge = 72000
 window_start = 1483689082 - fudge
 window_end = 1483753726 + fudge
 
-p
+print("Window start: %s" % mi
