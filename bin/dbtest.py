@@ -47,4 +47,7 @@ window_end = 1483753726 + fudge
 
 print("Window start: %s" % misc.epoch2str(window_start))
 print("Window end: %s" % misc.epoch2str(window_end))
-print("\nbh_epoch: %s" % misc.epoch2str(b
+print("\nbh_epoch: %s" % misc.epoch2str(bh_epoch))
+
+
+if (bh_epoch < wi
