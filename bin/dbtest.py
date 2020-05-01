@@ -53,4 +53,4 @@ print("\nbh_epoch: %s" % misc.epoch2str(bh_epoch))
 if (bh_epoch < window_start or bh_epoch > window_end):
     print("outside of window!")
 else:
-    print("Wi
+    print("Within window, we're go
