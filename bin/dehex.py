@@ -1,1 +1,4 @@
-import b
+import binascii
+import sys
+
+usage = "%s <
