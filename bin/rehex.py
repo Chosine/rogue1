@@ -5,4 +5,4 @@ import pdb
 from pprint import pprint
 import sys
 import os
-sys.path.append(os.path.norm
+sys.path.append(os.path.normpath(os.path.join(os.path.dirname(__file__
