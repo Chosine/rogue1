@@ -5,4 +5,4 @@ import pdb
 from pprint import pprint
 import sys
 import os
-sys.pa
+sys.path.append(os.path.norm
