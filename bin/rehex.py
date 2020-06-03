@@ -8,4 +8,7 @@ import os
 sys.path.append(os.path.normpath(os.path.join(os.path.dirname(__file__), '../lib')))
 import gobytelib
 # ============================================================================
-usage = "%s <hex>" % s
+usage = "%s <hex>" % sys.argv[0]
+
+obj = None
+if 
