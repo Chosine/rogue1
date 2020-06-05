@@ -11,4 +11,5 @@ import gobytelib
 usage = "%s <hex>" % sys.argv[0]
 
 obj = None
-if 
+if len(sys.argv) < 2:
+    print(usag
