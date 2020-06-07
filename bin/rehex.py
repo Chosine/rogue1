@@ -12,4 +12,6 @@ usage = "%s <hex>" % sys.argv[0]
 
 obj = None
 if len(sys.argv) < 2:
-    print(usag
+    print(usage)
+    sys.exit(1)
+else
