@@ -14,4 +14,5 @@ obj = None
 if len(sys.argv) < 2:
     print(usage)
     sys.exit(1)
-else
+else:
+    obj = gobytelib.deserialise(sys.
