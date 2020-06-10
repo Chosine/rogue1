@@ -15,4 +15,7 @@ if len(sys.argv) < 2:
     print(usage)
     sys.exit(1)
 else:
-    obj = gobytelib.deserialise(sys.
+    obj = gobytelib.deserialise(sys.argv[1])
+
+pdb.set_trace()
+1
