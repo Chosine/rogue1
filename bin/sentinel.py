@@ -36,3 +36,28 @@ def attempt_superblock_creation(gobyted):
 
     if not gobyted.is_masternode():
         print("We are not a Masternode... can't submit superblocks!")
+        return
+
+    # query votes for this specific ebh... if we have voted for this specific
+    # ebh, then it's voted on. since we track votes this is all done using joins
+    # against the votes table
+    #
+    # has this masternode voted on *any* superblocks at the given event_block_height?
+    # have we voted FUNDING=YES for a superblock for this specific event_block_height?
+
+    event_block_height = gobyted.next_superblock_height()
+
+    if Superblock.is_voted_funding(event_block_height):
+        # printdbg("ALREADY VOTED! 'til next time!")
+
+        # vote down any new SBs because we've already chosen a winner
+        for sb in Superblock.at_height(event_block_height):
+            if not sb.voted_on(signal=VoteSignals.funding):
+                sb.vote(gobyted, VoteSignals.funding, VoteOutcomes.no)
+
+        # now return, we're done
+        return
+
+    if not gobyted.is_govobj_maturity_phase():
+        printdbg("Not in maturity phase yet -- will not attempt Superblock")
+        return
