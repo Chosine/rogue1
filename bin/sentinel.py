@@ -125,3 +125,40 @@ def main():
     if not is_gobyted_port_open(gobyted):
         print("Cannot connect to gobyted. Please ensure gobyted is running and the JSONRPC port is open to Sentinel.")
         return
+
+    # check gobyted sync
+    if not gobyted.is_synced():
+        print("gobyted not synced with network! Awaiting full sync before running Sentinel.")
+        return
+
+    # ensure valid masternode
+    if not gobyted.is_masternode():
+        print("Invalid Masternode Status, cannot continue.")
+        return
+
+    # register a handler if SENTINEL_DEBUG is set
+    if os.environ.get('SENTINEL_DEBUG', None):
+        import logging
+        logger = logging.getLogger('peewee')
+        logger.setLevel(logging.DEBUG)
+        logger.addHandler(logging.StreamHandler())
+
+    if options.bypass:
+        # bypassing scheduler, remove the scheduled event
+        printdbg("--bypass-schedule option used, clearing schedule")
+        Scheduler.clear_schedule()
+
+    if not Scheduler.is_run_time():
+        printdbg("Not yet time for an object sync/vote, moving on.")
+        return
+
+    if not options.bypass:
+        # delay to account for cron minute sync
+        Scheduler.delay()
+
+    # running now, so remove the scheduled event
+    Scheduler.clear_schedule()
+
+    # ========================================================================
+    # general flow:
+    # ========================================================================
