@@ -61,3 +61,31 @@ def attempt_superblock_creation(gobyted):
     if not gobyted.is_govobj_maturity_phase():
         printdbg("Not in maturity phase yet -- will not attempt Superblock")
         return
+
+    proposals = Proposal.approved_and_ranked(proposal_quorum=gobyted.governance_quorum(), next_superblock_max_budget=gobyted.next_superblock_max_budget())
+    budget_max = gobyted.get_superblock_budget_allocation(event_block_height)
+    sb_epoch_time = gobyted.block_height_to_epoch(event_block_height)
+
+    sb = gobytelib.create_superblock(proposals, event_block_height, budget_max, sb_epoch_time)
+    if not sb:
+        printdbg("No superblock created, sorry. Returning.")
+        return
+
+    # find the deterministic SB w/highest object_hash in the DB
+    dbrec = Superblock.find_highest_deterministic(sb.hex_hash())
+    if dbrec:
+        dbrec.vote(gobyted, VoteSignals.funding, VoteOutcomes.yes)
+
+        # any other blocks which match the sb_hash are duplicates, delete them
+        for sb in Superblock.select().where(Superblock.sb_hash == sb.hex_hash()):
+            if not sb.voted_on(signal=VoteSignals.funding):
+                sb.vote(gobyted, VoteSignals.delete, VoteOutcomes.yes)
+
+        printdbg("VOTED FUNDING FOR SB! We're done here 'til next superblock cycle.")
+        return
+    else:
+        printdbg("The correct superblock wasn't found on the network...")
+
+    # if we are the elected masternode...
+    if (gobyted.we_are_the_winner()):
+        printdbg("we are the winner! Submit SB to network")
