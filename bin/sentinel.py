@@ -89,3 +89,39 @@ def attempt_superblock_creation(gobyted):
     # if we are the elected masternode...
     if (gobyted.we_are_the_winner()):
         printdbg("we are the winner! Submit SB to network")
+        sb.submit(gobyted)
+
+
+def check_object_validity(gobyted):
+    # vote (in)valid objects
+    for gov_class in [Proposal, Superblock]:
+        for obj in gov_class.select():
+            obj.vote_validity(gobyted)
+
+
+def is_gobyted_port_open(gobyted):
+    # test socket open before beginning, display instructive message to MN
+    # operators if it's not
+    port_open = False
+    try:
+        info = gobyted.rpc_command('getgovernanceinfo')
+        port_open = True
+    except (socket.error, JSONRPCException) as e:
+        print("%s" % e)
+
+    return port_open
+
+
+def main():
+    gobyted = GoByteDaemon.from_gobyte_conf(config.gobyte_conf)
+    options = process_args()
+
+    # print version and return if "--version" is an argument
+    if options.version:
+        print("GoByte Sentinel v%s" % config.sentinel_version)
+        return
+
+    # check gobyted connectivity
+    if not is_gobyted_port_open(gobyted):
+        print("Cannot connect to gobyted. Please ensure gobyted is running and the JSONRPC port is open to Sentinel.")
+        return
