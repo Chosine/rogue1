@@ -162,3 +162,39 @@ def main():
     # ========================================================================
     # general flow:
     # ========================================================================
+    #
+    # load "gobject list" rpc command data, sync objects into internal database
+    perform_gobyted_object_sync(gobyted)
+
+    # auto vote network objects as valid/invalid
+    # check_object_validity(gobyted)
+
+    # vote to delete expired proposals
+    prune_expired_proposals(gobyted)
+
+    # create a Superblock if necessary
+    attempt_superblock_creation(gobyted)
+
+    # schedule the next run
+    Scheduler.schedule_next_run()
+
+
+def signal_handler(signum, frame):
+    print("Got a signal [%d], cleaning up..." % (signum))
+    Transient.delete('SENTINEL_RUNNING')
+    sys.exit(1)
+
+
+def cleanup():
+    Transient.delete(mutex_key)
+
+
+def process_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-b', '--bypass-scheduler',
+                        action='store_true',
+                        help='Bypass scheduler and sync/vote immediately',
+                        dest='bypass')
+    parser.add_argument('-v', '--version',
+                        action='store_true',
+                        help='Print the version (GoByte Sentinel vX.X.X) and exit')
