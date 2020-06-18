@@ -50,3 +50,37 @@ def b58encode(v):
             break
 
     return (__b58chars[0] * nPad) + result
+
+
+def b58decode(v, length=None):
+    """ decode v into a string of len bytes
+    """
+    long_value = 0
+    for (i, c) in enumerate(v[::-1]):
+        long_value += __b58chars.find(c) * (__b58base**i)
+
+    result = bytes()
+    while long_value >= 256:
+        div, mod = divmod(long_value, 256)
+        result = chr(mod) + result
+        long_value = div
+    result = chr(long_value) + result
+
+    nPad = 0
+    for c in v:
+        if c == __b58chars[0]:
+            nPad += 1
+        else:
+            break
+
+    result = chr(0) * nPad + result
+
+    if length is not None and len(result) != length:
+        return None
+
+    return result
+
+
+def checksum(v):
+    """Return 32-bit checksum based on SHA256"""
+    return SHA256.new(SHA256.new(v).digest()).digest()[0:4]
