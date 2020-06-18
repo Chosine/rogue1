@@ -198,3 +198,26 @@ def process_args():
     parser.add_argument('-v', '--version',
                         action='store_true',
                         help='Print the version (GoByte Sentinel vX.X.X) and exit')
+
+    args = parser.parse_args()
+
+    return args
+
+
+if __name__ == '__main__':
+    atexit.register(cleanup)
+    signal.signal(signal.SIGINT, signal_handler)
+
+    # ensure another instance of Sentinel is not currently running
+    mutex_key = 'SENTINEL_RUNNING'
+    # assume that all processes expire after 'timeout_seconds' seconds
+    timeout_seconds = 90
+
+    is_running = Transient.get(mutex_key)
+    if is_running:
+        printdbg("An instance of Sentinel is already running -- aborting.")
+        sys.exit(1)
+    else:
+        Transient.set(mutex_key, misc.now(), timeout_seconds)
+
+    # locked to this instance -- perform main logic here
