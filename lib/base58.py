@@ -84,3 +84,33 @@ def b58decode(v, length=None):
 def checksum(v):
     """Return 32-bit checksum based on SHA256"""
     return SHA256.new(SHA256.new(v).digest()).digest()[0:4]
+
+
+def b58encode_chk(v):
+    """b58encode a string, with 32-bit checksum"""
+    return b58encode(v + checksum(v))
+
+
+def b58decode_chk(v):
+    """decode a base58 string, check and remove checksum"""
+    result = b58decode(v)
+
+    if result is None:
+        return None
+
+    h3 = checksum(result[:-4])
+
+    if result[-4:] == checksum(result[:-4]):
+        return result[:-4]
+    else:
+        return None
+
+
+def get_bcaddress_version(strAddress):
+    """ Returns None if strAddress is invalid.  Otherwise returns integer version of address. """
+    addr = b58decode_chk(strAddress)
+    if addr is None or len(addr) != 21:
+        return None
+    version = addr[0]
+    return ord(version)
+
