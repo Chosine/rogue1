@@ -2,4 +2,5 @@
     Set up defaults and read sentinel.conf
 """
 import sys
-i
+import os
+from gobyte_config im
