@@ -3,4 +3,6 @@
 """
 import sys
 import os
-from gobyte_config im
+from gobyte_config import GoByteConfig
+
+default_
