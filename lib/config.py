@@ -5,4 +5,4 @@ import sys
 import os
 from gobyte_config import GoByteConfig
 
-default_
+default_sentinel_config = os.path.n
