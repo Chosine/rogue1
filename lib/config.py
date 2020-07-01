@@ -6,4 +6,6 @@ import os
 from gobyte_config import GoByteConfig
 
 default_sentinel_config = os.path.normpath(
-    os.path.join(os.path.dirname(__file__), 
+    os.path.join(os.path.dirname(__file__), '../sentinel.conf')
+)
+sentine
