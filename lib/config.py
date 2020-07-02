@@ -8,4 +8,5 @@ from gobyte_config import GoByteConfig
 default_sentinel_config = os.path.normpath(
     os.path.join(os.path.dirname(__file__), '../sentinel.conf')
 )
-sentinel_config_file = os.environ.get('SENTINEL_CONFIG', de
+sentinel_config_file = os.environ.get('SENTINEL_CONFIG', default_sentinel_config)
+sentinel_cfg = 
