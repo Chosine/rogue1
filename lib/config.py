@@ -14,4 +14,5 @@ sentinel_version = "1.5.0"
 
 
 def get_gobyte_conf():
-    if sys.platform == 'w
+    if sys.platform == 'win32':
+        gobyte_conf = os.
