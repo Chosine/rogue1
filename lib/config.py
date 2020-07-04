@@ -13,4 +13,5 @@ sentinel_cfg = GoByteConfig.tokenize(sentinel_config_file)
 sentinel_version = "1.5.0"
 
 
-def get_gobyte_
+def get_gobyte_conf():
+    if sys.platform == 'w
