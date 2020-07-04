@@ -10,4 +10,7 @@ default_sentinel_config = os.path.normpath(
 )
 sentinel_config_file = os.environ.get('SENTINEL_CONFIG', default_sentinel_config)
 sentinel_cfg = GoByteConfig.tokenize(sentinel_config_file)
-sentinel_version
+sentinel_version = "1.5.0"
+
+
+def get_gobyte_
