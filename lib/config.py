@@ -19,4 +19,4 @@ def get_gobyte_conf():
     else:
         home = os.environ.get('HOME')
 
-        goby
+        gobyte_conf = os.path.join(home, ".gobytecore/gob
