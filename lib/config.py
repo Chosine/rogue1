@@ -23,4 +23,4 @@ def get_gobyte_conf():
         if sys.platform == 'darwin':
             gobyte_conf = os.path.join(home, "Library/Application Support/GoByteCore/gobyte.conf")
 
-  
+    gobyte_conf = sentinel_cfg
