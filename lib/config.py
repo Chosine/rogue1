@@ -29,4 +29,4 @@ def get_gobyte_conf():
 
 
 def get_network():
-    return s
+    return sentinel_cfg.get('net
