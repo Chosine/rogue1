@@ -28,4 +28,5 @@ def get_gobyte_conf():
     return gobyte_conf
 
 
-d
+def get_network():
+    return s
