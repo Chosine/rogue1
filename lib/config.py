@@ -20,4 +20,5 @@ def get_gobyte_conf():
         home = os.environ.get('HOME')
 
         gobyte_conf = os.path.join(home, ".gobytecore/gobyte.conf")
-        if sys.platform == 'darwin
+        if sys.platform == 'darwin':
+            gobyt
