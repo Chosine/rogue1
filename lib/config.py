@@ -24,3 +24,8 @@ def get_gobyte_conf():
             gobyte_conf = os.path.join(home, "Library/Application Support/GoByteCore/gobyte.conf")
 
     gobyte_conf = sentinel_cfg.get('gobyte_conf', gobyte_conf)
+
+    return gobyte_conf
+
+
+d
