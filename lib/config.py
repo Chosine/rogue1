@@ -21,4 +21,6 @@ def get_gobyte_conf():
 
         gobyte_conf = os.path.join(home, ".gobytecore/gobyte.conf")
         if sys.platform == 'darwin':
-            gobyte_conf = os.path.join(home, "Library/Application S
+            gobyte_conf = os.path.join(home, "Library/Application Support/GoByteCore/gobyte.conf")
+
+  
