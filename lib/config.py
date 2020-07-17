@@ -29,4 +29,7 @@ def get_gobyte_conf():
 
 
 def get_network():
-    return sentinel_cfg.get('net
+    return sentinel_cfg.get('network', 'mainnet')
+
+
+def get_rpcho
