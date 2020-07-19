@@ -32,4 +32,5 @@ def get_network():
     return sentinel_cfg.get('network', 'mainnet')
 
 
-def get_rpcho
+def get_rpchost():
+    return sentinel_cfg.get('rpc
