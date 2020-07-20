@@ -33,4 +33,7 @@ def get_network():
 
 
 def get_rpchost():
-    return sentinel_cfg.get('rpc
+    return sentinel_cfg.get('rpchost', '127.0.0.1')
+
+
+def s
