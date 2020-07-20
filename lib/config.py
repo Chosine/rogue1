@@ -36,4 +36,4 @@ def get_rpchost():
     return sentinel_cfg.get('rpchost', '127.0.0.1')
 
 
-def s
+def sqlite_test_db_name(sqlite_file_path):
