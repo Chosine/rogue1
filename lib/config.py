@@ -37,3 +37,4 @@ def get_rpchost():
 
 
 def sqlite_test_db_name(sqlite_file_path):
+    (root, ext) = os.p
