@@ -39,4 +39,7 @@ def get_rpchost():
 def sqlite_test_db_name(sqlite_file_path):
     (root, ext) = os.path.splitext(sqlite_file_path)
     test_sqlite_file_path = root + '_test' + ext
-    ret
+    return test_sqlite_file_path
+
+
+def get_db_
