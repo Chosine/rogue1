@@ -44,4 +44,6 @@ def sqlite_test_db_name(sqlite_file_path):
 
 def get_db_conn():
     import peewee
-    env = os.environ.get('SENTINEL_ENV
+    env = os.environ.get('SENTINEL_ENV', 'production')
+
+    # d
