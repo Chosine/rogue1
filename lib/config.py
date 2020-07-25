@@ -46,4 +46,5 @@ def get_db_conn():
     import peewee
     env = os.environ.get('SENTINEL_ENV', 'production')
 
-    # default values should be used unless you need a differ
+    # default values should be used unless you need a different config for development
+    db
