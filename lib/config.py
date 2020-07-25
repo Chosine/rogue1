@@ -47,4 +47,4 @@ def get_db_conn():
     env = os.environ.get('SENTINEL_ENV', 'production')
 
     # default values should be used unless you need a different config for development
-    db
+    db_host = sentinel_cfg.get('db_hos
