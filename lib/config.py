@@ -49,4 +49,4 @@ def get_db_conn():
     # default values should be used unless you need a different config for development
     db_host = sentinel_cfg.get('db_host', '127.0.0.1')
     db_port = sentinel_cfg.get('db_port', None)
-    db_name = s
+    db_name = sentinel_cfg.get('db_name',
