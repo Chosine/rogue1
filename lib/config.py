@@ -50,4 +50,4 @@ def get_db_conn():
     db_host = sentinel_cfg.get('db_host', '127.0.0.1')
     db_port = sentinel_cfg.get('db_port', None)
     db_name = sentinel_cfg.get('db_name', 'sentinel')
-    db_user = senti
+    db_user = sentinel_cfg.get('db_user', 'sentinel
