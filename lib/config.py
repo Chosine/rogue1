@@ -52,4 +52,5 @@ def get_db_conn():
     db_name = sentinel_cfg.get('db_name', 'sentinel')
     db_user = sentinel_cfg.get('db_user', 'sentinel')
     db_password = sentinel_cfg.get('db_password', 'sentinel')
-    db_charset = sen
+    db_charset = sentinel_cfg.get('db_charset', 'utf8mb4')
+ 
