@@ -53,4 +53,6 @@ def get_db_conn():
     db_user = sentinel_cfg.get('db_user', 'sentinel')
     db_password = sentinel_cfg.get('db_password', 'sentinel')
     db_charset = sentinel_cfg.get('db_charset', 'utf8mb4')
-    db_driver = sentinel_cfg.get
+    db_driver = sentinel_cfg.get('db_driver', 'sqlite')
+
+    if 
