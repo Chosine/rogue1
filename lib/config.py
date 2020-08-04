@@ -55,4 +55,5 @@ def get_db_conn():
     db_charset = sentinel_cfg.get('db_charset', 'utf8mb4')
     db_driver = sentinel_cfg.get('db_driver', 'sqlite')
 
-    if 
+    if (env == 'test'):
+        if
