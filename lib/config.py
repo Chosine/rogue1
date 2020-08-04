@@ -56,4 +56,4 @@ def get_db_conn():
     db_driver = sentinel_cfg.get('db_driver', 'sqlite')
 
     if (env == 'test'):
-        if
+        if db_driver == 'sqlite'
