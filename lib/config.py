@@ -57,4 +57,6 @@ def get_db_conn():
 
     if (env == 'test'):
         if db_driver == 'sqlite':
-            db_name = sqlite_te
+            db_name = sqlite_test_db_name(db_name)
+        else:
+            
