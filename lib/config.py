@@ -62,4 +62,5 @@ def get_db_conn():
             db_name = "%s_test" % db_name
 
     peewee_drivers = {
-        'mysql': peewee.MySQLDatabas
+        'mysql': peewee.MySQLDatabase,
+        'postgres': peewe
