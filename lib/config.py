@@ -63,4 +63,5 @@ def get_db_conn():
 
     peewee_drivers = {
         'mysql': peewee.MySQLDatabase,
-        'postgres': peewe
+        'postgres': peewee.PostgresqlDatabase,
+        'sqlit
