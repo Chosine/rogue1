@@ -66,3 +66,4 @@ def get_db_conn():
         'postgres': peewee.PostgresqlDatabase,
         'sqlite': peewee.SqliteDatabase,
     }
+    driver = peewee_drivers.get(db
