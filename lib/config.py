@@ -68,4 +68,5 @@ def get_db_conn():
     }
     driver = peewee_drivers.get(db_driver)
 
-    dbpfn = 'passwd' if db_driver == 'mysql' else 
+    dbpfn = 'passwd' if db_driver == 'mysql' else 'password'
+    db_conn = {
