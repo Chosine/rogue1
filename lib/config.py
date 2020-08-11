@@ -71,4 +71,5 @@ def get_db_conn():
     dbpfn = 'passwd' if db_driver == 'mysql' else 'password'
     db_conn = {
         'host': db_host,
- 
+        'user': db_user,
+   
