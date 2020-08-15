@@ -75,4 +75,4 @@ def get_db_conn():
         dbpfn: db_password,
     }
     if db_port:
-        db_conn['
+        db_conn['port'] = int(db_port)
