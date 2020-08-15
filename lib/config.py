@@ -74,3 +74,5 @@ def get_db_conn():
         'user': db_user,
         dbpfn: db_password,
     }
+    if db_port:
+        db_conn['
