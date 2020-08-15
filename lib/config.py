@@ -72,4 +72,5 @@ def get_db_conn():
     db_conn = {
         'host': db_host,
         'user': db_user,
-   
+        dbpfn: db_password,
+    }
