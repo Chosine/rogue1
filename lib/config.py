@@ -78,4 +78,6 @@ def get_db_conn():
         db_conn['port'] = int(db_port)
 
     if driver == peewee.SqliteDatabase:
-    
+        db_conn = {}
+
+    db = driv
