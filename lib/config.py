@@ -81,3 +81,8 @@ def get_db_conn():
         db_conn = {}
 
     db = driver(db_name, **db_conn)
+
+    return db
+
+
+gobyte_conf 
