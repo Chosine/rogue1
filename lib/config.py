@@ -80,4 +80,4 @@ def get_db_conn():
     if driver == peewee.SqliteDatabase:
         db_conn = {}
 
-    db = driv
+    db = driver(db_name, **db_conn)
