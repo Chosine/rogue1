@@ -85,4 +85,5 @@ def get_db_conn():
     return db
 
 
-gobyte_conf 
+gobyte_conf = get_gobyte_conf()
+network =
