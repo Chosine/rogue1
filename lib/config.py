@@ -87,4 +87,5 @@ def get_db_conn():
 
 gobyte_conf = get_gobyte_conf()
 network = get_network()
-rpc_hos
+rpc_host = get_rpchost()
+db 
