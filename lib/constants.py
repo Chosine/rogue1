@@ -1,1 +1,1 @@
-# for constan
+# for constants which need to be access
