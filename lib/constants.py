@@ -1,1 +1,1 @@
-# for constants which need to be access
+# for constants which need to be accessed by various parts of Senti
