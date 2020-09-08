@@ -1,4 +1,5 @@
 import simplejson
 
 
-def valid_jso
+def valid_json(input):
+    """ Return true/
