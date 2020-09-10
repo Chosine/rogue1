@@ -5,4 +5,5 @@ def valid_json(input):
     """ Return true/false depending on whether input is valid JSON """
     is_valid = False
     try:
-        simplejson.loa
+        simplejson.loads(input)
+        is_valid 
