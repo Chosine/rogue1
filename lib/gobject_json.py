@@ -6,4 +6,6 @@ def valid_json(input):
     is_valid = False
     try:
         simplejson.loads(input)
-        is_valid 
+        is_valid = True
+    except:
+   
