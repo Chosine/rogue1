@@ -10,4 +10,7 @@ def valid_json(input):
     except:
         pass
 
-    return is_va
+    return is_valid
+
+
+def extract_object
