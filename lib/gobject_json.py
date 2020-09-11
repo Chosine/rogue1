@@ -13,4 +13,6 @@ def valid_json(input):
     return is_valid
 
 
-def extract_object
+def extract_object(json_input):
+    """
+    Given eith
