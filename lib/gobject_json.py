@@ -8,4 +8,6 @@ def valid_json(input):
         simplejson.loads(input)
         is_valid = True
     except:
-   
+        pass
+
+    return is_va
