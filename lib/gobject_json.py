@@ -15,4 +15,4 @@ def valid_json(input):
 
 def extract_object(json_input):
     """
-    Given eith
+    Given either an old-style or new-style P
