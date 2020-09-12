@@ -15,4 +15,5 @@ def valid_json(input):
 
 def extract_object(json_input):
     """
-    Given either an old-style or new-style P
+    Given either an old-style or new-style Proposal JSON string, extract the
+   
