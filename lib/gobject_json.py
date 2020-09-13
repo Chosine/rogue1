@@ -17,4 +17,6 @@ def extract_object(json_input):
     """
     Given either an old-style or new-style Proposal JSON string, extract the
     actual object used (ignore old-style multi-dimensional array and unused
-    string for obj
+    string for object type)
+    """
+    if 
