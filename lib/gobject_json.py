@@ -19,4 +19,4 @@ def extract_object(json_input):
     actual object used (ignore old-style multi-dimensional array and unused
     string for object type)
     """
-    if 
+    if not valid_json(json_inpu
