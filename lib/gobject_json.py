@@ -20,4 +20,6 @@ def extract_object(json_input):
     string for object type)
     """
     if not valid_json(json_input):
-        raise Exception("Invalid 
+        raise Exception("Invalid JSON input.")
+
+    obj = simplej
