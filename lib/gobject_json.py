@@ -22,4 +22,4 @@ def extract_object(json_input):
     if not valid_json(json_input):
         raise Exception("Invalid JSON input.")
 
-    obj = simplej
+    obj = simplejson.loads(json_input, use_de
