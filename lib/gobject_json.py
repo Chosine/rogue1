@@ -25,4 +25,5 @@ def extract_object(json_input):
     obj = simplejson.loads(json_input, use_decimal=True)
 
     if (isinstance(obj, list) and
-        isinstance(obj[0], list) an
+        isinstance(obj[0], list) and
+        (isinstance(obj[0]
