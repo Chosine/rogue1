@@ -25,3 +25,36 @@ class GoByteConfig():
         data = ''.join(lines)
 
         return data
+
+    @classmethod
+    def get_rpc_creds(self, data, network='mainnet'):
+        # get rpc info from gobyte.conf
+        match = re.findall(r'rpc(user|password|port)=(.*?)$', data, re.MULTILINE)
+
+        # python >= 2.7
+        creds = {key: value for (key, value) in match}
+
+        # standard GoByte defaults...
+        default_port = 12454 if (network == 'mainnet') else 13454
+
+        # use default port for network if not specified in gobyte.conf
+        if not ('port' in creds):
+            creds[u'port'] = default_port
+
+        # convert to an int if taken from gobyte.conf
+        creds[u'port'] = int(creds[u'port'])
+
+        # return a dictionary with RPC credential key, value pairs
+        return creds
+
+    @classmethod
+    def tokenize(self, filename):
+        tokens = {}
+        try:
+            data = self.slurp_config_file(filename)
+            match = re.findall(r'(.*?)=(.*?)$', data, re.MULTILINE)
+            tokens = {key: value for (key, value) in match}
+        except IOError as e:
+            printdbg("[warning] error reading config file: %s" % e)
+
+        return tokens
