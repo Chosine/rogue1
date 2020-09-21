@@ -40,3 +40,28 @@ class GoByteDaemon():
         creds[u'host'] = config.rpc_host
 
         return self(**creds)
+
+    def rpc_command(self, *params):
+        return self.rpc_connection.__getattr__(params[0])(*params[1:])
+
+    # common RPC convenience methods
+
+    def get_masternodes(self):
+        mnlist = self.rpc_command('masternodelist', 'full')
+        return [Masternode(k, v) for (k, v) in mnlist.items()]
+
+    def get_current_masternode_vin(self):
+        from gobytelib import parse_masternode_status_vin
+
+        my_vin = None
+
+        try:
+            status = self.rpc_command('masternode', 'status')
+            mn_outpoint = status.get('outpoint') or status.get('vin')
+            my_vin = parse_masternode_status_vin(mn_outpoint)
+        except JSONRPCException as e:
+            pass
+
+        return my_vin
+
+    def governance_quorum(self):
