@@ -90,3 +90,33 @@ class GoByteDaemon():
 
     def next_superblock_height(self):
         return self.last_superblock_height() + self.superblockcycle()
+
+    def is_masternode(self):
+        return not (self.get_current_masternode_vin() is None)
+
+    def is_synced(self):
+        return self.rpc_command('mnsync', 'status')['IsSynced']
+
+    def current_block_hash(self):
+        height = self.rpc_command('getblockcount')
+        block_hash = self.rpc_command('getblockhash', height)
+        return block_hash
+
+    def get_superblock_budget_allocation(self, height=None):
+        if height is None:
+            height = self.rpc_command('getblockcount')
+        return Decimal(self.rpc_command('getsuperblockbudget', height))
+
+    def next_superblock_max_budget(self):
+        cycle = self.superblockcycle()
+        current_block_height = self.rpc_command('getblockcount')
+
+        last_superblock_height = (current_block_height // cycle) * cycle
+        next_superblock_height = last_superblock_height + cycle
+
+        last_allocation = self.get_superblock_budget_allocation(last_superblock_height)
+        next_allocation = self.get_superblock_budget_allocation(next_superblock_height)
+
+        next_superblock_max_budget = next_allocation
+
+        return next_superblock_max_budget
