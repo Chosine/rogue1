@@ -120,3 +120,30 @@ class GoByteDaemon():
         next_superblock_max_budget = next_allocation
 
         return next_superblock_max_budget
+
+    # "my" votes refers to the current running masternode
+    # memoized on a per-run, per-object_hash basis
+    def get_my_gobject_votes(self, object_hash):
+        import gobytelib
+        if not self.gobject_votes.get(object_hash):
+            my_vin = self.get_current_masternode_vin()
+            # if we can't get MN vin from output of `masternode status`,
+            # return an empty list
+            if not my_vin:
+                return []
+
+            (txid, vout_index) = my_vin.split('-')
+
+            cmd = ['gobject', 'getcurrentvotes', object_hash, txid, vout_index]
+            raw_votes = self.rpc_command(*cmd)
+            self.gobject_votes[object_hash] = gobytelib.parse_raw_votes(raw_votes)
+
+        return self.gobject_votes[object_hash]
+
+    def is_govobj_maturity_phase(self):
+        # 3-day period for govobj maturity
+        maturity_phase_delta = 1662      # ~(60*24*3)/2.6
+        if config.network == 'testnet':
+            maturity_phase_delta = 24    # testnet
+
+        event_block_height = self.next_superblock_height()
