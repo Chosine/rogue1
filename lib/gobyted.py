@@ -205,3 +205,9 @@ class GoByteDaemon():
             epoch = block['time']
         except JSONRPCException as e:
             if e.message == 'Block height out of range':
+                epoch = self.estimate_block_time(height)
+            else:
+                print("error: %s" % e)
+                raise e
+
+        return epoch
