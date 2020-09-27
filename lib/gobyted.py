@@ -172,3 +172,36 @@ class GoByteDaemon():
         # print "current masternode VIN: [%s]" % my_vin
 
         return (winner == my_vin)
+
+    def estimate_block_time(self, height):
+        import gobytelib
+        """
+        Called by block_height_to_epoch if block height is in the future.
+        Call `block_height_to_epoch` instead of this method.
+
+        DO NOT CALL DIRECTLY if you don't want a "Oh Noes." exception.
+        """
+        current_block_height = self.rpc_command('getblockcount')
+        diff = height - current_block_height
+
+        if (diff < 0):
+            raise Exception("Oh Noes.")
+
+        future_seconds = gobytelib.blocks_to_seconds(diff)
+        estimated_epoch = int(time.time() + future_seconds)
+
+        return estimated_epoch
+
+    def block_height_to_epoch(self, height):
+        """
+        Get the epoch for a given block height, or estimate it if the block hasn't
+        been mined yet. Call this method instead of `estimate_block_time`.
+        """
+        epoch = -1
+
+        try:
+            bhash = self.rpc_command('getblockhash', height)
+            block = self.rpc_command('getblock', bhash)
+            epoch = block['time']
+        except JSONRPCException as e:
+            if e.message == 'Block height out of range':
