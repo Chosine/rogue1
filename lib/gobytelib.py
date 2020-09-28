@@ -1,2 +1,3 @@
 import sys
-import 
+import os
+sys.path.append(os.pat
