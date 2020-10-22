@@ -9,3 +9,7 @@ from decimal import Decimal
 import simplejson
 import binascii
 from misc import printdbg, epoch2str
+import time
+
+
+def is_vali
