@@ -12,4 +12,4 @@ from misc import printdbg, epoch2str
 import time
 
 
-def is_vali
+def is_valid_gobyte_address(address, networ
