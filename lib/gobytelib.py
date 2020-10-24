@@ -12,4 +12,5 @@ from misc import printdbg, epoch2str
 import time
 
 
-def is_valid_gobyte_address(address, networ
+def is_valid_gobyte_address(address, network='mainnet'):
+    # Only pub
