@@ -13,4 +13,5 @@ import time
 
 
 def is_valid_gobyte_address(address, network='mainnet'):
-    # Only pub
+    # Only public key addresses are allowed
+    # 
