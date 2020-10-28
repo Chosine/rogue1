@@ -15,4 +15,5 @@ import time
 def is_valid_gobyte_address(address, network='mainnet'):
     # Only public key addresses are allowed
     # A valid address is a RIPEMD-160 hash which contains 20 bytes
-    # Prior to base58 encoding 1 version byte is prepe
+    # Prior to base58 encoding 1 version byte is prepended and
+    # 4 checksum bytes
