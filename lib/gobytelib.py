@@ -18,4 +18,4 @@ def is_valid_gobyte_address(address, network='mainnet'):
     # Prior to base58 encoding 1 version byte is prepended and
     # 4 checksum bytes are appended so the total number of
     # base58 encoded bytes should be 25.  This means the number of characters
-    # i
+    # in the encoding should be abo
