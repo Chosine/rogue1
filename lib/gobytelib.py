@@ -21,4 +21,4 @@ def is_valid_gobyte_address(address, network='mainnet'):
     # in the encoding should be about 34 ( 25 * log2( 256 ) / log2( 58 ) ).
     gobyte_version = 112 if network == 'testnet' else 38
 
-    # Check length (This is important because 
+    # Check length (This is important because the base58 library has problems
