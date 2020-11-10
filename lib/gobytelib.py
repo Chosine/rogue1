@@ -26,4 +26,6 @@ def is_valid_gobyte_address(address, network='mainnet'):
     if ((len(address) < 26) or (len(address) > 35)):
         return False
 
-    add
+    address_version = None
+
+   
