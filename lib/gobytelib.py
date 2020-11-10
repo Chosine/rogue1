@@ -23,4 +23,7 @@ def is_valid_gobyte_address(address, network='mainnet'):
 
     # Check length (This is important because the base58 library has problems
     # with long addresses (which are invalid anyway).
-    if ((len(address) < 26) or (len(address) > 
+    if ((len(address) < 26) or (len(address) > 35)):
+        return False
+
+    add
