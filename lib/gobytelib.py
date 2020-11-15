@@ -32,4 +32,4 @@ def is_valid_gobyte_address(address, network='mainnet'):
         decoded = base58.b58decode_chk(address)
         address_version = ord(decoded[0:1])
     except:
-      
+        # rescue from exception, not a valid
