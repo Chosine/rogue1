@@ -30,4 +30,6 @@ def is_valid_gobyte_address(address, network='mainnet'):
 
     try:
         decoded = base58.b58decode_chk(address)
-        address_version = ord(decod
+        address_version = ord(decoded[0:1])
+    except:
+      
