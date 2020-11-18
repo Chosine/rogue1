@@ -41,3 +41,5 @@ def is_valid_gobyte_address(address, network='mainnet'):
     return True
 
 
+def hashit(data):
+    return i
