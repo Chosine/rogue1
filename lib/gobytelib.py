@@ -35,4 +35,4 @@ def is_valid_gobyte_address(address, network='mainnet'):
         # rescue from exception, not a valid GoByte address
         return False
 
-   
+    if (address_version != gobyt
