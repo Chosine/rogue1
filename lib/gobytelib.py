@@ -36,4 +36,8 @@ def is_valid_gobyte_address(address, network='mainnet'):
         return False
 
     if (address_version != gobyte_version):
-        return
+        return False
+
+    return True
+
+
