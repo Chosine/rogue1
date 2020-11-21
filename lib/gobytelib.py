@@ -42,4 +42,4 @@ def is_valid_gobyte_address(address, network='mainnet'):
 
 
 def hashit(data):
-    return int(hashlib.sha256(data.encode(
+    return int(hashlib.sha256(data.encode('utf-8')).hexdigest(), 1
