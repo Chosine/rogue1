@@ -45,4 +45,5 @@ def hashit(data):
     return int(hashlib.sha256(data.encode('utf-8')).hexdigest(), 16)
 
 
-# returns the masternode VIN o
+# returns the masternode VIN of the elected winner
+def elect_
