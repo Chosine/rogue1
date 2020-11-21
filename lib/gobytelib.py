@@ -46,4 +46,5 @@ def hashit(data):
 
 
 # returns the masternode VIN of the elected winner
-def elect_
+def elect_mn(**kwargs):
+    current_block_hash
