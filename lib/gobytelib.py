@@ -48,4 +48,4 @@ def hashit(data):
 # returns the masternode VIN of the elected winner
 def elect_mn(**kwargs):
     current_block_hash = kwargs['block_hash']
-    m
+    mn_list = kwargs['mnlist
