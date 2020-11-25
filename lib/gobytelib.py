@@ -51,3 +51,4 @@ def elect_mn(**kwargs):
     mn_list = kwargs['mnlist']
 
     # filter only enabled MNs
+    enabled = [mn for mn in mn
