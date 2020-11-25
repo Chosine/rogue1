@@ -51,4 +51,6 @@ def elect_mn(**kwargs):
     mn_list = kwargs['mnlist']
 
     # filter only enabled MNs
-    enabled = [mn for mn in mn_list if mn.status == 'ENA
+    enabled = [mn for mn in mn_list if mn.status == 'ENABLED']
+
+    block_hash_hash = h
