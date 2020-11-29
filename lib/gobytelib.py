@@ -57,4 +57,4 @@ def elect_mn(**kwargs):
 
     candidates = []
     for mn in enabled:
- 
+        mn_vin_hash = hashit(mn.vin
