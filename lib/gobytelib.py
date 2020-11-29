@@ -58,4 +58,5 @@ def elect_mn(**kwargs):
     candidates = []
     for mn in enabled:
         mn_vin_hash = hashit(mn.vin)
-        diff = mn_vin_hash - bloc
+        diff = mn_vin_hash - block_hash_hash
+        absdiff = abs(di
