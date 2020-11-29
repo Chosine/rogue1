@@ -54,3 +54,7 @@ def elect_mn(**kwargs):
     enabled = [mn for mn in mn_list if mn.status == 'ENABLED']
 
     block_hash_hash = hashit(current_block_hash)
+
+    candidates = []
+    for mn in enabled:
+ 
