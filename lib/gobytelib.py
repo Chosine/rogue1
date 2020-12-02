@@ -60,4 +60,6 @@ def elect_mn(**kwargs):
         mn_vin_hash = hashit(mn.vin)
         diff = mn_vin_hash - block_hash_hash
         absdiff = abs(diff)
-        candidates.append({'vin': mn.vin, 'diff': absdiff}
+        candidates.append({'vin': mn.vin, 'diff': absdiff})
+
+    candidates.sort(k
