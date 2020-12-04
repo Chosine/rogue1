@@ -64,4 +64,5 @@ def elect_mn(**kwargs):
 
     candidates.sort(key=lambda k: k['diff'])
 
-    t
+    try:
+        winner = candida
