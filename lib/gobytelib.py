@@ -62,4 +62,6 @@ def elect_mn(**kwargs):
         absdiff = abs(diff)
         candidates.append({'vin': mn.vin, 'diff': absdiff})
 
-    candidates.sort(k
+    candidates.sort(key=lambda k: k['diff'])
+
+    t
