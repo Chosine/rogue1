@@ -65,4 +65,6 @@ def elect_mn(**kwargs):
     candidates.sort(key=lambda k: k['diff'])
 
     try:
-        winner = candida
+        winner = candidates[0]['vin']
+    except:
+       
