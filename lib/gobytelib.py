@@ -69,4 +69,7 @@ def elect_mn(**kwargs):
     except:
         winner = None
 
-    return win
+    return winner
+
+
+def parse_mastern
