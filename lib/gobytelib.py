@@ -67,4 +67,6 @@ def elect_mn(**kwargs):
     try:
         winner = candidates[0]['vin']
     except:
-       
+        winner = None
+
+    return win
