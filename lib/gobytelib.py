@@ -72,4 +72,5 @@ def elect_mn(**kwargs):
     return winner
 
 
-def parse_masternode_status_vin(status_vin_st
+def parse_masternode_status_vin(status_vin_string):
+    status_vin_str
