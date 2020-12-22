@@ -73,4 +73,6 @@ def elect_mn(**kwargs):
 
 
 def parse_masternode_status_vin(status_vin_string):
-    status_vin_string_regex = re.compile(r'CTxIn\(COutPoint\(([0-9a-zA-Z
+    status_vin_string_regex = re.compile(r'CTxIn\(COutPoint\(([0-9a-zA-Z]+),\s*(\d+)\),')
+
+    m = 
