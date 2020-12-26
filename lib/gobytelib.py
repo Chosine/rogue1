@@ -79,4 +79,5 @@ def parse_masternode_status_vin(status_vin_string):
 
     # To Support additional format of string return from masternode status rpc.
     if m is None:
-        status_output_string_regex = re.compil
+        status_output_string_regex = re.compile(r'([0-9a-zA-Z]+)-(\d+)')
+        
