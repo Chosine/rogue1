@@ -83,4 +83,6 @@ def parse_masternode_status_vin(status_vin_string):
         m = status_output_string_regex.match(status_vin_string)
 
     txid = m.group(1)
-    index = m.gro
+    index = m.group(2)
+
+    vin = txid + '-' + in
