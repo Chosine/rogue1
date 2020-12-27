@@ -85,4 +85,5 @@ def parse_masternode_status_vin(status_vin_string):
     txid = m.group(1)
     index = m.group(2)
 
-    vin = txid + '-' + in
+    vin = txid + '-' + index
+    if (txid == '000000000000000
