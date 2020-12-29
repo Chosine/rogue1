@@ -92,4 +92,4 @@ def parse_masternode_status_vin(status_vin_string):
     return vin
 
 
-def create_superblock(pro
+def create_superblock(proposals, event_block_height, bu
