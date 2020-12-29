@@ -89,4 +89,7 @@ def parse_masternode_status_vin(status_vin_string):
     if (txid == '0000000000000000000000000000000000000000000000000000000000000000'):
         vin = None
 
-    retu
+    return vin
+
+
+def create_superblock(pro
