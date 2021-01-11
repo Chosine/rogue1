@@ -98,4 +98,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
     import copy
 
     # don't create an empty superblock
-    if 
+    if (len(proposals) == 0):
+        pr
