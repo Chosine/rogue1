@@ -102,4 +102,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         printdbg("No proposals, cannot create an empty superblock.")
         return None
 
-    budget_alloc
+    budget_allocated = Decimal(0)
+    fudge = SUPERBL
