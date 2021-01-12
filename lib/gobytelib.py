@@ -100,4 +100,6 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
     # don't create an empty superblock
     if (len(proposals) == 0):
         printdbg("No proposals, cannot create an empty superblock.")
- 
+        return None
+
+    budget_alloc
