@@ -103,4 +103,4 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         return None
 
     budget_allocated = Decimal(0)
-    fudge = SUPERBL
+    fudge = SUPERBLOCK_FUDGE_WINDOW  # fudge-factor
