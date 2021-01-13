@@ -106,3 +106,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
     fudge = SUPERBLOCK_FUDGE_WINDOW  # fudge-factor to allow for slightly incorrect estimates
 
     payments_list = []
+
+    for proposal in proposals:
