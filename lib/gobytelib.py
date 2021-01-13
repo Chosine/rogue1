@@ -108,3 +108,4 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
     payments_list = []
 
     for proposal in proposals:
+        fmt_string = "name: %s, ra
