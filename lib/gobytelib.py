@@ -112,4 +112,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
 
         # skip proposals that are too expensive...
         if (budget_allocated + proposal.payment_amount) > budget_max:
-         
+            printdbg(
+                fmt_
