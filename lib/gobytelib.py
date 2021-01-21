@@ -117,4 +117,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
                     proposal.name,
                     proposal.rank,
                     proposal.object_hash,
-                    proposal.p
+                    proposal.payment_amount,
+              
