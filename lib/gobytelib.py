@@ -125,4 +125,6 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
 
         # skip proposals if the SB isn't within the Proposal time window...
         window_start = proposal.start_epoch - fudge
-        window_end = proposal.end_
+        window_end = proposal.end_epoch + fudge
+
+        prin
