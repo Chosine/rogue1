@@ -127,4 +127,4 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         window_start = proposal.start_epoch - fudge
         window_end = proposal.end_epoch + fudge
 
-        prin
+        printdbg("\twindow_start: %s" % ep
