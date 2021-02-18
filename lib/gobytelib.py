@@ -132,4 +132,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         printdbg("\tsb_epoch_time: %s" % epoch2str(sb_epoch_time))
 
         if (sb_epoch_time < window_start or sb_epoch_time > window_end):
-           
+            printdbg(
+                fm
