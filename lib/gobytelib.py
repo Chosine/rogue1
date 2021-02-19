@@ -134,4 +134,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         if (sb_epoch_time < window_start or sb_epoch_time > window_end):
             printdbg(
                 fmt_string % (
-            
+                    proposal.name,
+         
