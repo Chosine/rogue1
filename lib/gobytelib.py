@@ -138,4 +138,4 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
                     proposal.rank,
                     proposal.object_hash,
                     proposal.payment_amount,
-                    "skipped (SB tim
+                    "skipped (SB time is outside of Proposal wind
