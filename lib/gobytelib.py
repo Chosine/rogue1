@@ -144,4 +144,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
             continue
 
         printdbg(
-            fmt_stri
+            fmt_string % (
+                proposal.na
