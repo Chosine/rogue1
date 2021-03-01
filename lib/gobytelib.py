@@ -154,4 +154,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         )
 
         payment = {
-            'address': proposal.paymen
+            'address': proposal.payment_address,
+            'amount': "{0:.8f
