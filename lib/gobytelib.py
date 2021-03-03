@@ -159,4 +159,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
             'proposal': "{}".format(proposal.object_hash)
         }
 
-        temp_payments_list = copy.deepco
+        temp_payments_list = copy.deepcopy(payments_list)
+        temp_payment
