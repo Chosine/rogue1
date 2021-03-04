@@ -162,4 +162,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         temp_payments_list = copy.deepcopy(payments_list)
         temp_payments_list.append(payment)
 
-        # calculate size
+        # calculate size of proposed Superblock
+        s
