@@ -164,4 +164,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
 
         # calculate size of proposed Superblock
         sb_temp = Superblock(
-            event_block_height=event_
+            event_block_height=event_block_height,
+            pay
