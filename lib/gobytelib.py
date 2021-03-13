@@ -169,4 +169,6 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
             payment_amounts='|'.join([pd['amount'] for pd in temp_payments_list]),
             proposal_hashes='|'.join([pd['proposal'] for pd in temp_payments_list])
         )
-        proposed_sb_size = len(
+        proposed_sb_size = len(sb_temp.serialise())
+
+        # add prop
