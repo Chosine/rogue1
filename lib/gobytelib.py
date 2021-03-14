@@ -173,4 +173,6 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
 
         # add proposal and keep track of total budget allocation
         budget_allocated += proposal.payment_amount
-        payments_l
+        payments_list.append(payment)
+
+    # d
