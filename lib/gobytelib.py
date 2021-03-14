@@ -172,4 +172,4 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         proposed_sb_size = len(sb_temp.serialise())
 
         # add proposal and keep track of total budget allocation
-        budget_a
+        budget_allocated += proposal.payment
