@@ -175,4 +175,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         budget_allocated += proposal.payment_amount
         payments_list.append(payment)
 
-    # d
+    # don't create an empty superblock
+    if
