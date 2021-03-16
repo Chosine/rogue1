@@ -176,4 +176,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         payments_list.append(payment)
 
     # don't create an empty superblock
-    if
+    if not payments_list:
+        pri
