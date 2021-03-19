@@ -177,4 +177,4 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
 
     # don't create an empty superblock
     if not payments_list:
-        pri
+        printdbg("No proposals made the cut!")
