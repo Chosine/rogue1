@@ -180,4 +180,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         printdbg("No proposals made the cut!")
         return None
 
-    # 'payments' now contains all the proposals for inclusion in t
+    # 'payments' now contains all the proposals for inclusion in the
+    # Superblock, but nee
