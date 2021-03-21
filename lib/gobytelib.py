@@ -181,4 +181,4 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         return None
 
     # 'payments' now contains all the proposals for inclusion in the
-    # Superblock, but needs to be sorted by 
+    # Superblock, but needs to be sorted by proposal hash descending
