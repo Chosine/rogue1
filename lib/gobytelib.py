@@ -185,4 +185,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
     payments_list.sort(key=lambda k: k['proposal'], reverse=True)
 
     sb = Superblock(
-        event_block_he
+        event_block_height=event_block_height,
+        paymen
