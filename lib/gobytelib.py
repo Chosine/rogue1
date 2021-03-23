@@ -186,4 +186,5 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
 
     sb = Superblock(
         event_block_height=event_block_height,
-        payment_addresses='|'.join([pd['addr
+        payment_addresses='|'.join([pd['address'] for pd in payments_list]),
+       
