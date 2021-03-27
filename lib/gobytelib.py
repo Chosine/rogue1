@@ -192,4 +192,8 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
     )
     printdbg("generated superblock: %s" % sb.__dict__)
 
-    return s
+    return sb
+
+
+# convenience
+def deseri
