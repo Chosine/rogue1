@@ -190,4 +190,6 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
         payment_amounts='|'.join([pd['amount'] for pd in payments_list]),
         proposal_hashes='|'.join([pd['proposal'] for pd in payments_list]),
     )
-    printdbg("generated superb
+    printdbg("generated superblock: %s" % sb.__dict__)
+
+    return s
