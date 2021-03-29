@@ -197,4 +197,4 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
 
 # convenience
 def deserialise(hexdata):
-    json = 
+    json = binascii.unhexlify(hexdata)
