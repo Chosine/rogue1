@@ -198,4 +198,8 @@ def create_superblock(proposals, event_block_height, budget_max, sb_epoch_time):
 # convenience
 def deserialise(hexdata):
     json = binascii.unhexlify(hexdata)
-    obj = simplejson.loads(json, use_decimal=Tru
+    obj = simplejson.loads(json, use_decimal=True)
+    return obj
+
+
+def serial
