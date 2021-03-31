@@ -203,4 +203,4 @@ def deserialise(hexdata):
 
 
 def serialise(dikt):
-    json = simplej
+    json = simplejson.dumps(dikt, sort_keys=True
