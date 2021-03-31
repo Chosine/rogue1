@@ -202,4 +202,5 @@ def deserialise(hexdata):
     return obj
 
 
-def serial
+def serialise(dikt):
+    json = simplej
