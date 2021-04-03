@@ -204,4 +204,4 @@ def deserialise(hexdata):
 
 def serialise(dikt):
     json = simplejson.dumps(dikt, sort_keys=True, use_decimal=True)
-    hexd
+    hexdata = binascii.hexlif
