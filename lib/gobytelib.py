@@ -208,4 +208,5 @@ def serialise(dikt):
     return hexdata
 
 
-de
+def did_we_vote(output):
+    from 
