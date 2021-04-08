@@ -209,4 +209,4 @@ def serialise(dikt):
 
 
 def did_we_vote(output):
-    from 
+    from bitcoinrpc.authproxy import JSONRPCE
