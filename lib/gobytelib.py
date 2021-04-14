@@ -213,4 +213,7 @@ def did_we_vote(output):
 
     # sentinel
     voted = False
-    err_m
+    err_msg = ''
+
+    try:
+        
