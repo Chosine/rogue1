@@ -212,4 +212,5 @@ def did_we_vote(output):
     from bitcoinrpc.authproxy import JSONRPCException
 
     # sentinel
-  
+    voted = False
+    err_m
