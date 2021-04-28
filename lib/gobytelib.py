@@ -217,4 +217,5 @@ def did_we_vote(output):
 
     try:
         detail = output.get('detail').get('gobyte.conf')
-        result = detail.get('r
+        result = detail.get('result')
+        if 'errorMes
