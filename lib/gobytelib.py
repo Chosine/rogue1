@@ -216,4 +216,5 @@ def did_we_vote(output):
     err_msg = ''
 
     try:
-        detail = output.get('d
+        detail = output.get('detail').get('gobyte.conf')
+   
