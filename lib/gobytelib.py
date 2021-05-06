@@ -219,4 +219,4 @@ def did_we_vote(output):
         detail = output.get('detail').get('gobyte.conf')
         result = detail.get('result')
         if 'errorMessage' in detail:
-       
+            err_msg = detail.get('err
