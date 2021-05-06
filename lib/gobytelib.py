@@ -220,4 +220,5 @@ def did_we_vote(output):
         result = detail.get('result')
         if 'errorMessage' in detail:
             err_msg = detail.get('errorMessage')
-    except J
+    except JSONRPCException as e:
+       
