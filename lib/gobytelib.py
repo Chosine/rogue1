@@ -224,4 +224,5 @@ def did_we_vote(output):
         result = 'failed'
         err_msg = e.message
 
-   
+    # success, failed
+    
