@@ -225,4 +225,4 @@ def did_we_vote(output):
         err_msg = e.message
 
     # success, failed
-    
+    printdbg("result  = [%s]" % 
