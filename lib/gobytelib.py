@@ -234,4 +234,5 @@ def did_we_vote(output):
         voted = True
 
     # in case we spin up a new instance or server, but have already voted
-    # on the network and netwo
+    # on the network and network has recorded those votes
+    
