@@ -231,4 +231,6 @@ def did_we_vote(output):
 
     voted = False
     if result == 'success':
-  
+        voted = True
+
+    # in cas
