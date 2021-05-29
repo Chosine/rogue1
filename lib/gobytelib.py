@@ -233,4 +233,5 @@ def did_we_vote(output):
     if result == 'success':
         voted = True
 
-    # in case we spin up a new instance or server, but have already vote
+    # in case we spin up a new instance or server, but have already voted
+    # on the network and netwo
