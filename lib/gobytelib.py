@@ -229,4 +229,5 @@ def did_we_vote(output):
     if err_msg:
         printdbg("err_msg = [%s]" % err_msg)
 
+    voted = False
  
