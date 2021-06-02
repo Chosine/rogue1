@@ -235,4 +235,4 @@ def did_we_vote(output):
 
     # in case we spin up a new instance or server, but have already voted
     # on the network and network has recorded those votes
-    
+    m_old = re.match(r'^ti
