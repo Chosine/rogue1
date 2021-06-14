@@ -238,4 +238,4 @@ def did_we_vote(output):
     m_old = re.match(r'^time between votes is too soon', err_msg)
     m_new = re.search(r'Masternode voting too often', err_msg, re.M)
 
-    if result 
+    if result == 'failed' and (m_old or m_new):
