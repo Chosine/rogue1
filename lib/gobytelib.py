@@ -239,4 +239,4 @@ def did_we_vote(output):
     m_new = re.search(r'Masternode voting too often', err_msg, re.M)
 
     if result == 'failed' and (m_old or m_new):
-        printdbg("DEBUG:
+        printdbg("DEBUG: Voting too often, need to sync w/networ
