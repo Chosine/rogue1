@@ -240,4 +240,9 @@ def did_we_vote(output):
 
     if result == 'failed' and (m_old or m_new):
         printdbg("DEBUG: Voting too often, need to sync w/network")
-        voted = 
+        voted = False
+
+    return voted
+
+
+def 
