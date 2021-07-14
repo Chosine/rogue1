@@ -245,4 +245,4 @@ def did_we_vote(output):
     return voted
 
 
-def 
+def parse_raw_votes(raw_vote
