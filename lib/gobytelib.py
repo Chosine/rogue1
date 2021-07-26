@@ -248,4 +248,5 @@ def did_we_vote(output):
 def parse_raw_votes(raw_votes):
     votes = []
     for v in list(raw_votes.values()):
-        (outpoint, ntime, outcome, signa
+        (outpoint, ntime, outcome, signal) = v.split(':')
+        signal 
