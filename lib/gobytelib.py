@@ -250,4 +250,6 @@ def parse_raw_votes(raw_votes):
     for v in list(raw_votes.values()):
         (outpoint, ntime, outcome, signal) = v.split(':')
         signal = signal.lower()
-        outcom
+        outcome = outcome.lower()
+
+        mn_
