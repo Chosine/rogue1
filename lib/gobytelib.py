@@ -252,4 +252,4 @@ def parse_raw_votes(raw_votes):
         signal = signal.lower()
         outcome = outcome.lower()
 
-        mn_
+        mn_collateral_outpoint = parse_masternode_s
