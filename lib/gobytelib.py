@@ -252,4 +252,5 @@ def parse_raw_votes(raw_votes):
         signal = signal.lower()
         outcome = outcome.lower()
 
-        mn_collateral_outpoint = parse_masternode_s
+        mn_collateral_outpoint = parse_masternode_status_vin(outpoint)
+        v = {
