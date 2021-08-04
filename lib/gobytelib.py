@@ -255,4 +255,4 @@ def parse_raw_votes(raw_votes):
         mn_collateral_outpoint = parse_masternode_status_vin(outpoint)
         v = {
             'mn_collateral_outpoint': mn_collateral_outpoint,
- 
+            'sign
