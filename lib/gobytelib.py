@@ -256,4 +256,5 @@ def parse_raw_votes(raw_votes):
         v = {
             'mn_collateral_outpoint': mn_collateral_outpoint,
             'signal': signal,
-            'ou
+            'outcome': outcome,
+            'ntime
