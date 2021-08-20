@@ -259,4 +259,6 @@ def parse_raw_votes(raw_votes):
             'outcome': outcome,
             'ntime': ntime,
         }
-     
+        votes.append(v)
+
+    return vot
