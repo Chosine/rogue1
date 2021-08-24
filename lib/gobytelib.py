@@ -261,4 +261,7 @@ def parse_raw_votes(raw_votes):
         }
         votes.append(v)
 
-    return vot
+    return votes
+
+
+def blocks_to_seconds(blocks
