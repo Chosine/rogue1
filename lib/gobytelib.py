@@ -267,4 +267,6 @@ def parse_raw_votes(raw_votes):
 def blocks_to_seconds(blocks):
     """
     Return the estimated number of seconds which will transpire for a given
-    nu
+    number of blocks.
+    """
+    return b
