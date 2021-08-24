@@ -266,4 +266,4 @@ def parse_raw_votes(raw_votes):
 
 def blocks_to_seconds(blocks):
     """
-    Return the estimate
+    Return the estimated number of seconds which will trans
