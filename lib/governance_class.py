@@ -34,3 +34,32 @@ class GovernanceClass(object):
         else:
             printdbg("Voting INVALID! %s: %d" % (self.__class__.__name__, self.id))
             self.vote(gobyted, models.VoteSignals.valid, models.VoteOutcomes.no)
+
+    def get_submit_command(self):
+        obj_data = self.serialise()
+
+        # new objects won't have parent_hash, revision, etc...
+        cmd = ['gobject', 'submit', '0', '1', str(int(time.time())), obj_data]
+
+        # some objects don't have a collateral tx to submit
+        if not self.only_masternode_can_submit:
+            cmd.append(go.object_fee_tx)
+
+        return cmd
+
+    def submit(self, gobyted):
+        # don't attempt to submit a superblock unless a masternode
+        # note: will probably re-factor this, this has code smell
+        if (self.only_masternode_can_submit and not gobyted.is_masternode()):
+            print("Not a masternode. Only masternodes may submit these objects")
+            return
+
+        try:
+            object_hash = gobyted.rpc_command(*self.get_submit_command())
+            printdbg("Submitted: [%s]" % object_hash)
+        except JSONRPCException as e:
+            print("Unable to submit: %s" % e.message)
+
+    def serialise(self):
+        import binascii
+        import simplejson
