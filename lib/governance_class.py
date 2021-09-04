@@ -63,3 +63,31 @@ class GovernanceClass(object):
     def serialise(self):
         import binascii
         import simplejson
+
+        return binascii.hexlify(simplejson.dumps(self.get_dict(), sort_keys=True).encode('utf-8')).decode('utf-8')
+
+    @classmethod
+    def serialisable_fields(self):
+        # Python is so not very elegant...
+        pk_column = self._meta.primary_key.db_column
+        fk_columns = [fk.db_column for fk in self._meta.rel.values()]
+        do_not_use = [pk_column]
+        do_not_use.extend(fk_columns)
+        do_not_use.append('object_hash')
+        fields_to_serialise = list(self._meta.columns.keys())
+
+        for field in do_not_use:
+            if field in fields_to_serialise:
+                fields_to_serialise.remove(field)
+
+        return fields_to_serialise
+
+    def get_dict(self):
+        dikt = {}
+
+        for field_name in self.serialisable_fields():
+            dikt[field_name] = getattr(self, field_name)
+
+        dikt['type'] = getattr(self, 'govobj_type')
+
+        return dikt
