@@ -27,3 +27,29 @@ def are_deps_installed():
     installed = False
 
     try:
+        import peewee
+        import bitcoinrpc.authproxy
+        import simplejson
+        installed = True
+    except ImportError as e:
+        print("[error]: Missing dependencies")
+
+    return installed
+
+
+def is_database_correctly_configured():
+    import peewee
+    import config
+
+    configured = False
+
+    cannot_connect_message = "Cannot connect to database. Please ensure database service is running and user access is properly configured in 'sentinel.conf'."
+
+    try:
+        db = config.db
+        db.connect()
+        configured = True
+    except (peewee.ImproperlyConfigured, peewee.OperationalError, ImportError) as e:
+        print("[error]: %s" % e)
+        print(cannot_connect_message)
+        sys.exit(1)
