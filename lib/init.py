@@ -84,3 +84,20 @@ def main():
 
     if not is_valid_python_version():
         print("Python %s is not supported" % python_short_ver_str())
+        sys.exit(1)
+
+    if not are_deps_installed():
+        print("Please ensure all dependencies are installed:")
+        print(install_instructions)
+        sys.exit(1)
+
+    if not is_database_correctly_configured():
+        print("Please ensure correct database configuration.")
+        sys.exit(1)
+
+    if not has_gobyte_conf():
+        print("GoByteCore must be installed and configured, including JSONRPC access in gobyte.conf")
+        sys.exit(1)
+
+
+main()
