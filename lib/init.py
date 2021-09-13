@@ -53,3 +53,34 @@ def is_database_correctly_configured():
         print("[error]: %s" % e)
         print(cannot_connect_message)
         sys.exit(1)
+
+    return configured
+
+
+def has_gobyte_conf():
+    import config
+    import io
+
+    valid_gobyte_conf = False
+
+    # ensure gobyte_conf exists & readable
+    #
+    # if not, print a message stating that GoByte Core must be installed and
+    # configured, including JSONRPC access in gobyte.conf
+    try:
+        f = io.open(config.gobyte_conf)
+        valid_gobyte_conf = True
+    except IOError as e:
+        print(e)
+
+    return valid_gobyte_conf
+
+
+# === begin main
+
+
+def main():
+    install_instructions = "\tpip install -r requirements.txt"
+
+    if not is_valid_python_version():
+        print("Python %s is not supported" % python_short_ver_str())
