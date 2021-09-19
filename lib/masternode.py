@@ -35,3 +35,10 @@ class Masternode():
                 lastpaidblock, ip_port) = mn_full_out.split()
         except:
             (status, address, lastpaid, lastpaidblock, ip_port) = mn_full_out.split()
+
+        # status protocol pubkey IP lastpaid
+        return (status, address, ip_port, lastpaid)
+
+    @property
+    def vin(self):
+        return self.txid + '-' + str(self.vout_index)
