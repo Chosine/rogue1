@@ -6,4 +6,6 @@ import os
 
 
 def is_numeric(strin):
-   
+    import decimal
+
+    strin = str(stri
