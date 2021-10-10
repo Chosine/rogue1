@@ -8,4 +8,6 @@ import os
 def is_numeric(strin):
     import decimal
 
-    strin = str(stri
+    strin = str(strin)
+
+    # Decimal allows spaces in 
