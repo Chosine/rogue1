@@ -10,4 +10,5 @@ def is_numeric(strin):
 
     strin = str(strin)
 
-    # Decimal allows spaces in 
+    # Decimal allows spaces in input, but we don't
+  
