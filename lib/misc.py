@@ -15,3 +15,4 @@ def is_numeric(strin):
         return False
     try:
         value = decimal.Decimal(strin)
+    except decimal.InvalidOper
