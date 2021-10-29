@@ -14,4 +14,4 @@ def is_numeric(strin):
     if strin.strip() != strin:
         return False
     try:
-       
+        value = decimal.Decimal(strin)
