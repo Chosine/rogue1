@@ -18,3 +18,7 @@ def is_numeric(strin):
     except decimal.InvalidOperation as e:
         return False
 
+    return True
+
+
+def p
