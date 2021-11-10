@@ -21,4 +21,5 @@ def is_numeric(strin):
     return True
 
 
-def p
+def printdbg(str):
+    ts = t
