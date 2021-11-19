@@ -22,4 +22,4 @@ def is_numeric(strin):
 
 
 def printdbg(str):
-    ts = time.strftime('%Y-%m-%d %H:%
+    ts = time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(now
