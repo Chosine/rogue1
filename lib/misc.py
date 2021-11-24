@@ -24,4 +24,4 @@ def is_numeric(strin):
 def printdbg(str):
     ts = time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(now()))
     logstr = "{} {}".format(ts, str)
-    if os.environ.get('S
+    if os.environ.get('SENTINEL_DEBUG', None):
