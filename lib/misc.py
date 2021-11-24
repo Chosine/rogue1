@@ -23,4 +23,5 @@ def is_numeric(strin):
 
 def printdbg(str):
     ts = time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(now()))
-    logstr = "{} {}".for
+    logstr = "{} {}".format(ts, str)
+    if os.environ.get('S
