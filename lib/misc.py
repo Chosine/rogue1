@@ -39,4 +39,5 @@ def now():
     return int(time.time())
 
 
-def epoch2str(epoch
+def epoch2str(epoch):
+    return datetime.utcfromtim
