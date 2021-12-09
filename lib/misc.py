@@ -36,4 +36,7 @@ def is_hash(s):
 
 
 def now():
-    return int(time.time()
+    return int(time.time())
+
+
+def epoch2str(epoch
