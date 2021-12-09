@@ -30,4 +30,5 @@ def printdbg(str):
     sys.stdout.flush()
 
 
-def is_hash(s
+def is_hash(s):
+    m = re.match('^[a-f0-9]{64}$
