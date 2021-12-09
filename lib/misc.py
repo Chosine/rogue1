@@ -31,4 +31,6 @@ def printdbg(str):
 
 
 def is_hash(s):
-    m = re.match('^[a-f0-9]{64}$
+    m = re.match('^[a-f0-9]{64}$', s)
+    return m is not None
+
