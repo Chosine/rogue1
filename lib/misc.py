@@ -40,4 +40,4 @@ def now():
 
 
 def epoch2str(epoch):
-    return datetime.utcfromtim
+    return datetime.utcfromtimestamp(epoch).strftime("%Y-%m-%d %H
