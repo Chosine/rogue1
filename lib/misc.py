@@ -40,4 +40,7 @@ def now():
 
 
 def epoch2str(epoch):
-    return datetime.utcfromtimestamp(epoch).strftime("%Y-%m-%d %H
+    return datetime.utcfromtimestamp(epoch).strftime("%Y-%m-%d %H:%M:%S")
+
+
+class Bunch(object)
