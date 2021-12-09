@@ -27,4 +27,7 @@ def printdbg(str):
     if os.environ.get('SENTINEL_DEBUG', None):
         print(logstr)
 
-    sys.stdo
+    sys.stdout.flush()
+
+
+def is_hash(s
