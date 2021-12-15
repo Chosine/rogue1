@@ -45,4 +45,6 @@ def epoch2str(epoch):
 
 class Bunch(object):
     def __init__(self, **kwargs):
-        self.__dict__
+        self.__dict__.update(kwargs)
+
+    def get(sel
