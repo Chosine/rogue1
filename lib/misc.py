@@ -48,4 +48,4 @@ class Bunch(object):
         self.__dict__.update(kwargs)
 
     def get(self, name):
-        return self.__dict__.get(name, N
+        return self.__dict__.get(name, None)
