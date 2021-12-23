@@ -74,3 +74,32 @@ class GovernanceObject(BaseModel):
 
     class Meta:
         db_table = 'governance_objects'
+
+    # sync gobyted gobject list with our local relational DB backend
+    @classmethod
+    def sync(self, gobyted):
+        golist = gobyted.rpc_command('gobject', 'list')
+
+        # objects which are removed from the network should be removed from the DB
+        try:
+            for purged in self.purged_network_objects(list(golist.keys())):
+                # SOMEDAY: possible archive step here
+                purged.delete_instance(recursive=True, delete_nullable=True)
+        except Exception as e:
+            printdbg("Got an error while purging: %s" % e)
+
+        for item in golist.values():
+            try:
+                (go, subobj) = self.import_gobject_from_gobyted(gobyted, item)
+            except Exception as e:
+                printdbg("Got an error upon import: %s" % e)
+
+    @classmethod
+    def purged_network_objects(self, network_object_hashes):
+        query = self.select()
+        if network_object_hashes:
+            query = query.where(~(self.object_hash << network_object_hashes))
+        return query
+
+    @classmethod
+    def import_gobject_from_gobyted(self, gobyted, rec):
