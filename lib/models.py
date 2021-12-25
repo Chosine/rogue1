@@ -103,3 +103,37 @@ class GovernanceObject(BaseModel):
 
     @classmethod
     def import_gobject_from_gobyted(self, gobyted, rec):
+        import decimal
+        import gobytelib
+        import binascii
+        import gobject_json
+
+        object_hash = rec['Hash']
+
+        gobj_dict = {
+            'object_hash': object_hash,
+            'object_fee_tx': rec['CollateralHash'],
+            'absolute_yes_count': rec['AbsoluteYesCount'],
+            'abstain_count': rec['AbstainCount'],
+            'yes_count': rec['YesCount'],
+            'no_count': rec['NoCount'],
+        }
+
+        # deserialise and extract object
+        json_str = binascii.unhexlify(rec['DataHex']).decode('utf-8')
+        dikt = gobject_json.extract_object(json_str)
+
+        subobj = None
+
+        type_class_map = {
+            1: Proposal,
+            2: Superblock,
+        }
+        subclass = type_class_map[dikt['type']]
+
+        # set object_type in govobj table
+        gobj_dict['object_type'] = subclass.govobj_type
+
+        # exclude any invalid model data from gobyted...
+        valid_keys = subclass.serialisable_fields()
+        subdikt = {k: dikt[k] for k in valid_keys if k in dikt}
