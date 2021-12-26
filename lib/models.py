@@ -167,3 +167,37 @@ class GovernanceObject(BaseModel):
         count = subobj.update(**subdikt).where(subclass.id == subobj.id).execute()
         if count:
             printdbg("subobj updated = %d" % count)
+
+        # ATM, returns a tuple w/gov attributes and the govobj
+        return (govobj, subobj)
+
+    def vote_delete(self, gobyted):
+        if not self.voted_on(signal=VoteSignals.delete, outcome=VoteOutcomes.yes):
+            self.vote(gobyted, VoteSignals.delete, VoteOutcomes.yes)
+        return
+
+    def get_vote_command(self, signal, outcome):
+        cmd = ['gobject', 'vote-conf', self.object_hash,
+               signal.name, outcome.name]
+        return cmd
+
+    def vote(self, gobyted, signal, outcome):
+        import gobytelib
+
+        # At this point, will probably never reach here. But doesn't hurt to
+        # have an extra check just in case objects get out of sync (people will
+        # muck with the DB).
+        if (self.object_hash == '0' or not misc.is_hash(self.object_hash)):
+            printdbg("No governance object hash, nothing to vote on.")
+            return
+
+        # have I already voted on this gobject with this particular signal and outcome?
+        if self.voted_on(signal=signal):
+            printdbg("Found a vote for this gobject/signal...")
+            vote = self.votes.where(Vote.signal == signal)[0]
+
+            # if the outcome is the same, move on, nothing more to do
+            if vote.outcome == outcome:
+                # move on.
+                printdbg("Already voted for this same gobject/signal/outcome, no need to re-vote.")
+                return
