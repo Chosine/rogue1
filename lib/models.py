@@ -259,3 +259,28 @@ class GovernanceObject(BaseModel):
 
 class Setting(BaseModel):
     name = CharField(default='')
+    value = CharField(default='')
+    created_at = DateTimeField(default=datetime.datetime.utcnow())
+    updated_at = DateTimeField(default=datetime.datetime.utcnow())
+
+    class Meta:
+        db_table = 'settings'
+
+
+class Proposal(GovernanceClass, BaseModel):
+    governance_object = ForeignKeyField(GovernanceObject, related_name='proposals', on_delete='CASCADE', on_update='CASCADE')
+    name = CharField(default='', max_length=40)
+    url = CharField(default='')
+    start_epoch = IntegerField()
+    end_epoch = IntegerField()
+    payment_address = CharField(max_length=36)
+    payment_amount = DecimalField(max_digits=16, decimal_places=8)
+    object_hash = CharField(max_length=64)
+
+    # src/governance-validators.cpp
+    MAX_DATA_SIZE = 512
+
+    govobj_type = GOBYTED_GOVOBJ_TYPES['proposal']
+
+    class Meta:
+        db_table = 'proposals'
