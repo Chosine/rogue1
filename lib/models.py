@@ -137,3 +137,33 @@ class GovernanceObject(BaseModel):
         # exclude any invalid model data from gobyted...
         valid_keys = subclass.serialisable_fields()
         subdikt = {k: dikt[k] for k in valid_keys if k in dikt}
+
+        # get/create, then sync vote counts from gobyted, with every run
+        govobj, created = self.get_or_create(object_hash=object_hash, defaults=gobj_dict)
+        if created:
+            printdbg("govobj created = %s" % created)
+        count = govobj.update(**gobj_dict).where(self.id == govobj.id).execute()
+        if count:
+            printdbg("govobj updated = %d" % count)
+        subdikt['governance_object'] = govobj
+
+        # get/create, then sync payment amounts, etc. from gobyted - GoByted is the master
+        try:
+            newdikt = subdikt.copy()
+            newdikt['object_hash'] = object_hash
+            if subclass(**newdikt).is_valid() is False:
+                govobj.vote_delete(gobyted)
+                return (govobj, None)
+
+            subobj, created = subclass.get_or_create(object_hash=object_hash, defaults=subdikt)
+        except Exception as e:
+            # in this case, vote as delete, and log the vote in the DB
+            printdbg("Got invalid object from gobyted! %s" % e)
+            govobj.vote_delete(gobyted)
+            return (govobj, None)
+
+        if created:
+            printdbg("subobj created = %s" % created)
+        count = subobj.update(**subdikt).where(subclass.id == subobj.id).execute()
+        if count:
+            printdbg("subobj updated = %d" % count)
