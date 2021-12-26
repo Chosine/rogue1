@@ -201,3 +201,35 @@ class GovernanceObject(BaseModel):
                 # move on.
                 printdbg("Already voted for this same gobject/signal/outcome, no need to re-vote.")
                 return
+            else:
+                printdbg("Found a STALE vote for this gobject/signal, deleting so that we can re-vote.")
+                vote.delete_instance()
+
+        else:
+            printdbg("Haven't voted on this gobject/signal yet...")
+
+        # now ... vote!
+
+        vote_command = self.get_vote_command(signal, outcome)
+        printdbg(' '.join(vote_command))
+        output = gobyted.rpc_command(*vote_command)
+
+        # extract vote output parsing to external lib
+        voted = gobytelib.did_we_vote(output)
+
+        if voted:
+            printdbg('VOTE success, saving Vote object to database')
+            Vote(governance_object=self, signal=signal, outcome=outcome,
+                 object_hash=self.object_hash).save()
+        else:
+            printdbg('VOTE failed, trying to sync with network vote')
+            self.sync_network_vote(gobyted, signal)
+
+    def sync_network_vote(self, gobyted, signal):
+        printdbg('\tSyncing network vote for object %s with signal %s' % (self.object_hash, signal.name))
+        vote_info = gobyted.get_my_gobject_votes(self.object_hash)
+        for vdikt in vote_info:
+            if vdikt['signal'] != signal.name:
+                continue
+
+            # ensure valid outcome
