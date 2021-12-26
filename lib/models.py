@@ -233,3 +233,29 @@ class GovernanceObject(BaseModel):
                 continue
 
             # ensure valid outcome
+            outcome = VoteOutcomes.get(vdikt['outcome'])
+            if not outcome:
+                continue
+
+            printdbg('\tFound a matching valid vote on the network, outcome = %s' % vdikt['outcome'])
+            Vote(governance_object=self, signal=signal, outcome=outcome,
+                 object_hash=self.object_hash).save()
+
+    def voted_on(self, **kwargs):
+        signal = kwargs.get('signal', None)
+        outcome = kwargs.get('outcome', None)
+
+        query = self.votes
+
+        if signal:
+            query = query.where(Vote.signal == signal)
+
+        if outcome:
+            query = query.where(Vote.outcome == outcome)
+
+        count = query.count()
+        return count
+
+
+class Setting(BaseModel):
+    name = CharField(default='')
