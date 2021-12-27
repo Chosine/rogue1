@@ -314,3 +314,30 @@ class Proposal(GovernanceClass, BaseModel):
             # amount can't be negative or 0
             if (float(self.payment_amount) <= 0):
                 printdbg("\tProposal amount [%s] is negative or zero, returning False" % self.payment_amount)
+                return False
+
+            # payment address is valid base58 gobyte addr, non-multisig
+            if not gobytelib.is_valid_gobyte_address(self.payment_address, config.network):
+                printdbg("\tPayment address [%s] not a valid GoByte address for network [%s], returning False" % (self.payment_address, config.network))
+                return False
+
+            # URL
+            if (len(self.url.strip()) < 4):
+                printdbg("\tProposal URL [%s] too short, returning False" % self.url)
+                return False
+
+            # proposal URL has any whitespace
+            if (re.search(r'\s', self.url)):
+                printdbg("\tProposal URL [%s] has whitespace, returning False" % self.name)
+                return False
+
+            # GoByte Core restricts proposals to 512 bytes max
+            if len(self.serialise()) > (self.MAX_DATA_SIZE * 2):
+                printdbg("\tProposal [%s] is too big, returning False" % self.name)
+                return False
+
+            try:
+                parsed = urlparse.urlparse(self.url)
+            except Exception as e:
+                printdbg("\tUnable to parse Proposal URL, marking invalid: %s" % e)
+                return False
