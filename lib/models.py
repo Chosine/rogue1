@@ -341,3 +341,34 @@ class Proposal(GovernanceClass, BaseModel):
             except Exception as e:
                 printdbg("\tUnable to parse Proposal URL, marking invalid: %s" % e)
                 return False
+
+        except Exception as e:
+            printdbg("Unable to validate in Proposal#is_valid, marking invalid: %s" % e.message)
+            return False
+
+        printdbg("Leaving Proposal#is_valid, Valid = True")
+        return True
+
+    def is_expired(self, superblockcycle=None):
+        from constants import SUPERBLOCK_FUDGE_WINDOW
+        import gobytelib
+
+        if not superblockcycle:
+            raise Exception("Required field superblockcycle missing.")
+
+        printdbg("In Proposal#is_expired, for Proposal: %s" % self.__dict__)
+        now = misc.now()
+        printdbg("\tnow = %s" % now)
+
+        # half the SB cycle, converted to seconds
+        # add the fudge_window in seconds, defined elsewhere in Sentinel
+        expiration_window_seconds = int(
+            (gobytelib.blocks_to_seconds(superblockcycle) / 2) +
+            SUPERBLOCK_FUDGE_WINDOW
+        )
+        printdbg("\texpiration_window_seconds = %s" % expiration_window_seconds)
+
+        # "fully expires" adds the expiration window to end time to ensure a
+        # valid proposal isn't excluded from SB by cutting it too close
+        fully_expires_at = self.end_epoch + expiration_window_seconds
+        printdbg("\tfully_expires_at = %s" % fully_expires_at)
