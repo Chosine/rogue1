@@ -284,3 +284,33 @@ class Proposal(GovernanceClass, BaseModel):
 
     class Meta:
         db_table = 'proposals'
+
+    def is_valid(self):
+        import gobytelib
+
+        printdbg("In Proposal#is_valid, for Proposal: %s" % self.__dict__)
+
+        try:
+            # proposal name exists and is not null/whitespace
+            if (len(self.name.strip()) == 0):
+                printdbg("\tInvalid Proposal name [%s], returning False" % self.name)
+                return False
+
+            # proposal name is normalized (something like "[a-zA-Z0-9-_]+")
+            if not re.match(r'^[-_a-zA-Z0-9]+$', self.name):
+                printdbg("\tInvalid Proposal name [%s] (does not match regex), returning False" % self.name)
+                return False
+
+            # end date < start date
+            if (self.end_epoch <= self.start_epoch):
+                printdbg("\tProposal end_epoch [%s] <= start_epoch [%s] , returning False" % (self.end_epoch, self.start_epoch))
+                return False
+
+            # amount must be numeric
+            if misc.is_numeric(self.payment_amount) is False:
+                printdbg("\tProposal amount [%s] is not valid, returning False" % self.payment_amount)
+                return False
+
+            # amount can't be negative or 0
+            if (float(self.payment_amount) <= 0):
+                printdbg("\tProposal amount [%s] is negative or zero, returning False" % self.payment_amount)
