@@ -372,3 +372,42 @@ class Proposal(GovernanceClass, BaseModel):
         # valid proposal isn't excluded from SB by cutting it too close
         fully_expires_at = self.end_epoch + expiration_window_seconds
         printdbg("\tfully_expires_at = %s" % fully_expires_at)
+
+        if (fully_expires_at < now):
+            printdbg("\tProposal end_epoch [%s] < now [%s] , returning True" % (self.end_epoch, now))
+            return True
+
+        printdbg("Leaving Proposal#is_expired, Expired = False")
+        return False
+
+    @classmethod
+    def approved_and_ranked(self, proposal_quorum, next_superblock_max_budget):
+        # return all approved proposals, in order of descending vote count
+        #
+        # we need a secondary 'order by' in case of a tie on vote count, since
+        # superblocks must be deterministic
+        query = (self
+                 .select(self, GovernanceObject)  # Note that we are selecting both models.
+                 .join(GovernanceObject)
+                 .where(GovernanceObject.absolute_yes_count > proposal_quorum)
+                 .order_by(GovernanceObject.absolute_yes_count.desc(), GovernanceObject.object_hash.desc())
+                 )
+
+        ranked = []
+        for proposal in query:
+            proposal.max_budget = next_superblock_max_budget
+            if proposal.is_valid():
+                ranked.append(proposal)
+
+        return ranked
+
+    @classmethod
+    def expired(self, superblockcycle=None):
+        if not superblockcycle:
+            raise Exception("Required field superblockcycle missing.")
+
+        expired = []
+
+        for proposal in self.select():
+            if proposal.is_expired(superblockcycle):
+                expired.append(proposal)
