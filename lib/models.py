@@ -411,3 +411,38 @@ class Proposal(GovernanceClass, BaseModel):
         for proposal in self.select():
             if proposal.is_expired(superblockcycle):
                 expired.append(proposal)
+
+        return expired
+
+    @property
+    def rank(self):
+        rank = 0
+        if self.governance_object:
+            rank = self.governance_object.absolute_yes_count
+            return rank
+
+
+class Superblock(BaseModel, GovernanceClass):
+    governance_object = ForeignKeyField(GovernanceObject, related_name='superblocks', on_delete='CASCADE', on_update='CASCADE')
+    event_block_height = IntegerField()
+    payment_addresses = TextField()
+    payment_amounts = TextField()
+    proposal_hashes = TextField(default='')
+    sb_hash = CharField()
+    object_hash = CharField(max_length=64)
+
+    govobj_type = GOBYTED_GOVOBJ_TYPES['superblock']
+    only_masternode_can_submit = True
+
+    class Meta:
+        db_table = 'superblocks'
+
+    def is_valid(self):
+        import gobytelib
+        import decimal
+
+        printdbg("In Superblock#is_valid, for SB: %s" % self.__dict__)
+
+        # it's a string from the DB...
+        addresses = self.payment_addresses.split('|')
+        for addr in addresses:
