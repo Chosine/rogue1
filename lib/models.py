@@ -446,3 +446,31 @@ class Superblock(BaseModel, GovernanceClass):
         # it's a string from the DB...
         addresses = self.payment_addresses.split('|')
         for addr in addresses:
+            if not gobytelib.is_valid_gobyte_address(addr, config.network):
+                printdbg("\tInvalid address [%s], returning False" % addr)
+                return False
+
+        amounts = self.payment_amounts.split('|')
+        for amt in amounts:
+            if not misc.is_numeric(amt):
+                printdbg("\tAmount [%s] is not numeric, returning False" % amt)
+                return False
+
+            # no negative or zero amounts allowed
+            damt = decimal.Decimal(amt)
+            if not damt > 0:
+                printdbg("\tAmount [%s] is zero or negative, returning False" % damt)
+                return False
+
+        # verify proposal hashes correctly formatted...
+        if len(self.proposal_hashes) > 0:
+            hashes = self.proposal_hashes.split('|')
+            for object_hash in hashes:
+                if not misc.is_hash(object_hash):
+                    printdbg("\tInvalid proposal hash [%s], returning False" % object_hash)
+                    return False
+
+        # ensure number of payment addresses matches number of payments
+        if len(addresses) != len(amounts):
+            printdbg("\tNumber of payment addresses [%s] != number of payment amounts [%s], returning False" % (len(addresses), len(amounts)))
+            return False
