@@ -510,3 +510,29 @@ class Superblock(BaseModel, GovernanceClass):
                  .switch(Vote)  # switch join query context back to Vote
                  .join(Outcome)
                  .where(Vote.signal == VoteSignals.funding)
+                 .where(Vote.outcome == VoteOutcomes.yes)
+                 .count())
+        return count
+
+    @classmethod
+    def latest(self):
+        try:
+            obj = self.select().order_by(self.event_block_height).desc().limit(1)[0]
+        except IndexError as e:
+            obj = None
+        return obj
+
+    @classmethod
+    def at_height(self, ebh):
+        query = (self.select().where(self.event_block_height == ebh))
+        return query
+
+    @classmethod
+    def find_highest_deterministic(self, sb_hash):
+        # highest block hash wins
+        query = (self.select()
+                 .where(self.sb_hash == sb_hash)
+                 .order_by(self.object_hash.desc()))
+        try:
+            obj = query.limit(1)[0]
+        except IndexError as e:
