@@ -474,3 +474,39 @@ class Superblock(BaseModel, GovernanceClass):
         if len(addresses) != len(amounts):
             printdbg("\tNumber of payment addresses [%s] != number of payment amounts [%s], returning False" % (len(addresses), len(amounts)))
             return False
+
+        printdbg("Leaving Superblock#is_valid, Valid = True")
+        return True
+
+    def hash(self):
+        import gobytelib
+        return gobytelib.hashit(self.serialise())
+
+    def hex_hash(self):
+        return "%x" % self.hash()
+
+    # workaround for now, b/c we must uniquely ID a superblock with the hash,
+    # in case of differing superblocks
+    #
+    # this prevents sb_hash from being added to the serialised fields
+    @classmethod
+    def serialisable_fields(self):
+        return [
+            'event_block_height',
+            'payment_addresses',
+            'payment_amounts',
+            'proposal_hashes'
+        ]
+
+    # has this masternode voted to fund *any* superblocks at the given
+    # event_block_height?
+    @classmethod
+    def is_voted_funding(self, ebh):
+        count = (self.select()
+                 .where(self.event_block_height == ebh)
+                 .join(GovernanceObject)
+                 .join(Vote)
+                 .join(Signal)
+                 .switch(Vote)  # switch join query context back to Vote
+                 .join(Outcome)
+                 .where(Vote.signal == VoteSignals.funding)
