@@ -588,3 +588,33 @@ class Transient(object):
             self.__setattr__(key, kwargs.get(key))
 
     def is_expired(self):
+        return (self.created_at + self.timeout) < misc.now()
+
+    @classmethod
+    def deserialise(self, json):
+        try:
+            dikt = simplejson.loads(json)
+        # a no-op, but this tells us what exception to expect
+        except simplejson.scanner.JSONDecodeError as e:
+            raise e
+
+        lizt = [dikt.get(key, None) for key in ['timeout', 'value']]
+        lizt = list(set(lizt))
+        if None in lizt:
+            printdbg("Not all fields required for transient -- moving along.")
+            raise Exception("Required fields not present for transient.")
+
+        return dikt
+
+    @classmethod
+    def from_setting(self, setting):
+        dikt = Transient.deserialise(setting.value)
+        dikt['created_at'] = int((setting.created_at - datetime.datetime.utcfromtimestamp(0)).total_seconds())
+        return Transient(**dikt)
+
+    @classmethod
+    def cleanup(self):
+        for s in Setting.select().where(Setting.name.startswith('__transient_')):
+            try:
+                t = Transient.from_setting(s)
+            except:
