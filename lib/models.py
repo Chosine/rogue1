@@ -618,3 +618,34 @@ class Transient(object):
             try:
                 t = Transient.from_setting(s)
             except:
+                continue
+
+            if t.is_expired():
+                s.delete_instance()
+
+    @classmethod
+    def get(self, name):
+        setting_name = "__transient_%s" % (name)
+
+        try:
+            the_setting = Setting.get(Setting.name == setting_name)
+            t = Transient.from_setting(the_setting)
+        except Setting.DoesNotExist as e:
+            return False
+
+        if t.is_expired():
+            the_setting.delete_instance()
+            return False
+        else:
+            return t.value
+
+    @classmethod
+    def set(self, name, value, timeout):
+        setting_name = "__transient_%s" % (name)
+        setting_dikt = {
+            'value': simplejson.dumps({
+                'value': value,
+                'timeout': timeout,
+            }),
+        }
+        setting, created = Setting.get_or_create(name=setting_name, defaults=setting_dikt)
