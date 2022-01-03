@@ -536,3 +536,37 @@ class Superblock(BaseModel, GovernanceClass):
         try:
             obj = query.limit(1)[0]
         except IndexError as e:
+            obj = None
+        return obj
+
+
+# ok, this is an awkward way to implement these...
+# "hook" into the Superblock model and run this code just before any save()
+from playhouse.signals import pre_save
+
+
+@pre_save(sender=Superblock)
+def on_save_handler(model_class, instance, created):
+    instance.sb_hash = instance.hex_hash()
+
+
+class Signal(BaseModel):
+    name = CharField(unique=True)
+    created_at = DateTimeField(default=datetime.datetime.utcnow())
+    updated_at = DateTimeField(default=datetime.datetime.utcnow())
+
+    class Meta:
+        db_table = 'signals'
+
+
+class Outcome(BaseModel):
+    name = CharField(unique=True)
+    created_at = DateTimeField(default=datetime.datetime.utcnow())
+    updated_at = DateTimeField(default=datetime.datetime.utcnow())
+
+    class Meta:
+        db_table = 'outcomes'
+
+
+class Vote(BaseModel):
+    governance_object = ForeignKeyField(GovernanceObject, related_name='votes', on_delete='CASCADE', on_update='CASCADE')
