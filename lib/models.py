@@ -649,3 +649,31 @@ class Transient(object):
             }),
         }
         setting, created = Setting.get_or_create(name=setting_name, defaults=setting_dikt)
+        return setting
+
+    @classmethod
+    def delete(self, name):
+        setting_name = "__transient_%s" % (name)
+        try:
+            s = Setting.get(Setting.name == setting_name)
+        except Setting.DoesNotExist as e:
+            return False
+        return s.delete_instance()
+
+# === /models ===
+
+
+def load_db_seeds():
+    rows_created = 0
+
+    for name in ['funding', 'valid', 'delete']:
+        (obj, created) = Signal.get_or_create(name=name)
+        if created:
+            rows_created = rows_created + 1
+
+    for name in ['yes', 'no', 'abstain']:
+        (obj, created) = Outcome.get_or_create(name=name)
+        if created:
+            rows_created = rows_created + 1
+
+    return rows_created
