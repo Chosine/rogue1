@@ -677,3 +677,42 @@ def load_db_seeds():
             rows_created = rows_created + 1
 
     return rows_created
+
+
+def db_models():
+    """ Return a list of Sentinel DB models. """
+    models = [
+        GovernanceObject,
+        Setting,
+        Proposal,
+        Superblock,
+        Signal,
+        Outcome,
+        Vote
+    ]
+    return models
+
+
+def check_db_sane():
+    """ Ensure DB tables exist, create them if they don't. """
+    check_db_schema_version()
+
+    missing_table_models = []
+
+    for model in db_models():
+        if not getattr(model, 'table_exists')():
+            missing_table_models.append(model)
+            printdbg("[warning]: Table for %s (%s) doesn't exist in DB." % (model, model._meta.db_table))
+
+    if missing_table_models:
+        printdbg("[warning]: Missing database tables. Auto-creating tables.")
+        try:
+            db.create_tables(missing_table_models, safe=True)
+        except (peewee.InternalError, peewee.OperationalError, peewee.ProgrammingError) as e:
+            print("[error] Could not create tables: %s" % e)
+
+    update_schema_version()
+    purge_invalid_amounts()
+
+
+def check_db_schema_version():
