@@ -756,3 +756,13 @@ def purge_invalid_amounts():
             GovernanceObject.id == proposal.governance_object_id
         )
         printdbg("[info]: Pruning governance object w/invalid amount: %s" % gobject.object_hash)
+        gobject.delete_instance(recursive=True, delete_nullable=True)
+
+
+# sanity checks...
+check_db_sane()     # ensure tables exist
+load_db_seeds()     # ensure seed data loaded
+
+# convenience accessors
+VoteSignals = misc.Bunch(**{sig.name: sig for sig in Signal.select()})
+VoteOutcomes = misc.Bunch(**{out.name: out for out in Outcome.select()})
