@@ -716,3 +716,43 @@ def check_db_sane():
 
 
 def check_db_schema_version():
+    """ Ensure DB schema is correct version. Drop tables if not. """
+    db_schema_version = None
+
+    try:
+        db_schema_version = Setting.get(Setting.name == 'DB_SCHEMA_VERSION').value
+    except (peewee.OperationalError, peewee.DoesNotExist, peewee.ProgrammingError) as e:
+        printdbg("[info]: Can't get DB_SCHEMA_VERSION...")
+
+    printdbg("[info]: SCHEMA_VERSION (code) = [%s]" % SCHEMA_VERSION)
+    printdbg("[info]: DB_SCHEMA_VERSION = [%s]" % db_schema_version)
+    if (SCHEMA_VERSION != db_schema_version):
+        printdbg("[info]: Schema version mis-match. Syncing tables.")
+        try:
+            existing_table_names = db.get_tables()
+            existing_models = [m for m in db_models() if m._meta.db_table in existing_table_names]
+            if (existing_models):
+                printdbg("[info]: Dropping tables...")
+                db.drop_tables(existing_models, safe=False, cascade=False)
+        except (peewee.InternalError, peewee.OperationalError, peewee.ProgrammingError) as e:
+            print("[error] Could not drop tables: %s" % e)
+
+
+def update_schema_version():
+    schema_version_setting, created = Setting.get_or_create(name='DB_SCHEMA_VERSION', defaults={'value': SCHEMA_VERSION})
+    if (schema_version_setting.value != SCHEMA_VERSION):
+        schema_version_setting.save()
+    return
+
+
+def purge_invalid_amounts():
+    result_set = Proposal.select(
+        Proposal.id,
+        Proposal.governance_object
+    ).where(Proposal.payment_amount.contains(','))
+
+    for proposal in result_set:
+        gobject = GovernanceObject.get(
+            GovernanceObject.id == proposal.governance_object_id
+        )
+        printdbg("[info]: Pruning governance object w/invalid amount: %s" % gobject.object_hash)
