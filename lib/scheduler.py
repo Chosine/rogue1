@@ -1,3 +1,3 @@
 import sys
 import os
-s
+sys.path.append(os.path.normpath(os.pa
