@@ -9,4 +9,5 @@ import time
 import random
 
 
-class Schedul
+class Scheduler(object):
+    transient_
