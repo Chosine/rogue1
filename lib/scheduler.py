@@ -10,4 +10,4 @@ import random
 
 
 class Scheduler(object):
-    transient_
+    transient_key_scheduled = 'NEXT_SENT
