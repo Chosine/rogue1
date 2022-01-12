@@ -5,4 +5,8 @@ import init
 import misc
 from models import Transient
 from misc import printdbg
-impor
+import time
+import random
+
+
+class Schedul
