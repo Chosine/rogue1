@@ -10,4 +10,5 @@ import random
 
 
 class Scheduler(object):
-    transient_key_scheduled = 'NEXT_SENT
+    transient_key_scheduled = 'NEXT_SENTINEL_CHECK_AT'
+    random_in
