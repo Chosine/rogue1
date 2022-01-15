@@ -13,4 +13,5 @@ class Scheduler(object):
     transient_key_scheduled = 'NEXT_SENTINEL_CHECK_AT'
     random_interval_max = 1800
 
-    @classm
+    @classmethod
+    def is_run_time(s
