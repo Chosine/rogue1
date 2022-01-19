@@ -15,4 +15,7 @@ class Scheduler(object):
 
     @classmethod
     def is_run_time(self):
-        next_run_time = Transient.get(self.transient_key_scheduled) or 
+        next_run_time = Transient.get(self.transient_key_scheduled) or 0
+        now = misc.now()
+
+       
