@@ -14,4 +14,5 @@ class Scheduler(object):
     random_interval_max = 1800
 
     @classmethod
-    def is_run_time(s
+    def is_run_time(self):
+        next_run_time = Transient.get(se
