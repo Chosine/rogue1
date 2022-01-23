@@ -19,4 +19,6 @@ class Scheduler(object):
         now = misc.now()
 
         printdbg("current_time = %d" % now)
-        printdbg("next_run_time = %d" % nex
+        printdbg("next_run_time = %d" % next_run_time)
+
+       
