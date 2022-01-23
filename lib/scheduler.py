@@ -18,4 +18,5 @@ class Scheduler(object):
         next_run_time = Transient.get(self.transient_key_scheduled) or 0
         now = misc.now()
 
-        printdbg("current_time
+        printdbg("current_time = %d" % now)
+        printdbg("ne
