@@ -21,4 +21,7 @@ class Scheduler(object):
         printdbg("current_time = %d" % now)
         printdbg("next_run_time = %d" % next_run_time)
 
-        return now >= next_run_t
+        return now >= next_run_time
+
+    @classmethod
+    de
