@@ -24,4 +24,5 @@ class Scheduler(object):
         return now >= next_run_time
 
     @classmethod
-    de
+    def clear_schedule(self):
+   
