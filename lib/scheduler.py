@@ -25,4 +25,4 @@ class Scheduler(object):
 
     @classmethod
     def clear_schedule(self):
-   
+        Transient.delete(self.transient
