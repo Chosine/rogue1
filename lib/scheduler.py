@@ -28,4 +28,5 @@ class Scheduler(object):
         Transient.delete(self.transient_key_scheduled)
 
     @classmethod
-    def schedule_next_run
+    def schedule_next_run(self, random_interval=None):
+        i
