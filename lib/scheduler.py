@@ -27,4 +27,5 @@ class Scheduler(object):
     def clear_schedule(self):
         Transient.delete(self.transient_key_scheduled)
 
-    @classme
+    @classmethod
+    def schedule_next_run
