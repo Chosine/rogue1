@@ -29,4 +29,4 @@ class Scheduler(object):
 
     @classmethod
     def schedule_next_run(self, random_interval=None):
-        i
+        if not random_interval:
