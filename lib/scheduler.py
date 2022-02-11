@@ -30,3 +30,4 @@ class Scheduler(object):
     @classmethod
     def schedule_next_run(self, random_interval=None):
         if not random_interval:
+            random_inter
