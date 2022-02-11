@@ -30,4 +30,6 @@ class Scheduler(object):
     @classmethod
     def schedule_next_run(self, random_interval=None):
         if not random_interval:
-            random_inter
+            random_interval = self.random_interval_max
+
+        next_run_at = misc.now() 
