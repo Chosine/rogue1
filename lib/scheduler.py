@@ -32,4 +32,4 @@ class Scheduler(object):
         if not random_interval:
             random_interval = self.random_interval_max
 
-        next_run_at = misc.now() 
+        next_run_at = misc.now() + random.randint(1, 
