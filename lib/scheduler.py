@@ -34,4 +34,4 @@ class Scheduler(object):
 
         next_run_at = misc.now() + random.randint(1, random_interval)
         printdbg("scheduling next sentinel run for %d" % next_run_at)
-        Tran
+        Transient.set(self.transient_key_
