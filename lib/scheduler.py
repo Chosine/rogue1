@@ -37,4 +37,5 @@ class Scheduler(object):
         Transient.set(self.transient_key_scheduled, next_run_at,
                       next_run_at)
 
-   
+    @classmethod
+    def delay(self, dela
