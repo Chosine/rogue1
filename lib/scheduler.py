@@ -38,4 +38,5 @@ class Scheduler(object):
                       next_run_at)
 
     @classmethod
-    def delay(self, dela
+    def delay(self, delay_in_seconds=None):
+        if not dela
