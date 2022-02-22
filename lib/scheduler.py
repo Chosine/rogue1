@@ -40,4 +40,5 @@ class Scheduler(object):
     @classmethod
     def delay(self, delay_in_seconds=None):
         if not delay_in_seconds:
-            delay_i
+            delay_in_seconds = random.randint(0, 60)
+
