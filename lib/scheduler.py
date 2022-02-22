@@ -39,4 +39,5 @@ class Scheduler(object):
 
     @classmethod
     def delay(self, delay_in_seconds=None):
-        if not dela
+        if not delay_in_seconds:
+            delay_i
