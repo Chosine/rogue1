@@ -42,4 +42,5 @@ class Scheduler(object):
         if not delay_in_seconds:
             delay_in_seconds = random.randint(0, 60)
 
-        # do not delay longe
+        # do not delay longer than 60 seconds
+     
