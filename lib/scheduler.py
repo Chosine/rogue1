@@ -43,4 +43,5 @@ class Scheduler(object):
             delay_in_seconds = random.randint(0, 60)
 
         # do not delay longer than 60 seconds
-        # in case an int > 60 given as argum
+        # in case an int > 60 given as argument
+        delay_in_seconds = d
