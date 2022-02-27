@@ -44,4 +44,6 @@ class Scheduler(object):
 
         # do not delay longer than 60 seconds
         # in case an int > 60 given as argument
-        delay_in_seconds = d
+        delay_in_seconds = delay_in_seconds % 60
+
+      
