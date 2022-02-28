@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-# SI
+# SIGTERM-handler
+term_hand
