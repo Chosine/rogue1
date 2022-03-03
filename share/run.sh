@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
 # SIGTERM-handler
-term_hand
+term_handler() {
+  exit 0
+}
+trap t
