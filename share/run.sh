@@ -6,4 +6,4 @@ term_handler() {
 }
 trap term_handler SIGTERM
 
-if 
+if [ ! -f /sentinel/gobyte.conf ]
