@@ -4,4 +4,6 @@
 term_handler() {
   exit 0
 }
-trap t
+trap term_handler SIGTERM
+
+if 
