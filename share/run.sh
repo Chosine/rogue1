@@ -7,4 +7,4 @@ term_handler() {
 trap term_handler SIGTERM
 
 if [ ! -f /sentinel/gobyte.conf ]; then
-  if [ -z "$RPCUSER" -o -z "$
+  if [ -z "$RPCUSER" -o -z "$RPCPASSWORD" -o -z "$RPCPO
