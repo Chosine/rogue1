@@ -12,4 +12,5 @@ if [ ! -f /sentinel/gobyte.conf ]; then
     exit 1
   fi
 
-  echo 
+  echo "" > /sentinel/gobyte.conf
+  if
