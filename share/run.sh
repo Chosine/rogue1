@@ -8,4 +8,8 @@ trap term_handler SIGTERM
 
 if [ ! -f /sentinel/gobyte.conf ]; then
   if [ -z "$RPCUSER" -o -z "$RPCPASSWORD" -o -z "$RPCPORT" ]; then
-    echo "When no /sentinel/gobyte.conf is present, you must at least set RPCUSER, RPCPORT and RPCPASSWORD environment
+    echo "When no /sentinel/gobyte.conf is present, you must at least set RPCUSER, RPCPORT and RPCPASSWORD environment variables"
+    exit 1
+  fi
+
+  echo 
