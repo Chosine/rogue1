@@ -13,4 +13,4 @@ if [ ! -f /sentinel/gobyte.conf ]; then
   fi
 
   echo "" > /sentinel/gobyte.conf
-  if
+  if [ -n "$RPCUSER" ]
