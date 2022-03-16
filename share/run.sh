@@ -16,4 +16,5 @@ if [ ! -f /sentinel/gobyte.conf ]; then
   if [ -n "$RPCUSER" ]; then
     echo "rpcuser=${RPCUSER}" >> /sentinel/gobyte.conf
   fi
-  if [ -n "$RP
+  if [ -n "$RPCPASSWORD" ]; then
+    echo "rpcpassw
