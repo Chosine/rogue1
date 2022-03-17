@@ -24,4 +24,5 @@ if [ ! -f /sentinel/gobyte.conf ]; then
   fi
 fi
 
-if [ ! -f /sentinel/sentinel.co
+if [ ! -f /sentinel/sentinel.conf ]; then
+  if [ -z "$RPCHOST" ];
