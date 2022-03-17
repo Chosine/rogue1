@@ -25,4 +25,5 @@ if [ ! -f /sentinel/gobyte.conf ]; then
 fi
 
 if [ ! -f /sentinel/sentinel.conf ]; then
-  if [ -z "$RPCHOST" ];
+  if [ -z "$RPCHOST" ]; then
+    echo "When no /sentinel/sentinal.con
