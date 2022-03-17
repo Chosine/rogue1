@@ -20,4 +20,8 @@ if [ ! -f /sentinel/gobyte.conf ]; then
     echo "rpcpassword=${RPCPASSWORD}" >> /sentinel/gobyte.conf
   fi
   if [ -n "$RPCPORT" ]; then
-    echo "rpcport=${RPCPORT}" >> /senti
+    echo "rpcport=${RPCPORT}" >> /sentinel/gobyte.conf
+  fi
+fi
+
+if
