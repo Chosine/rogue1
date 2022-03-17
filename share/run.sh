@@ -24,4 +24,4 @@ if [ ! -f /sentinel/gobyte.conf ]; then
   fi
 fi
 
-if
+if [ ! -f /sentinel/sentinel.co
