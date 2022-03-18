@@ -26,4 +26,4 @@ fi
 
 if [ ! -f /sentinel/sentinel.conf ]; then
   if [ -z "$RPCHOST" ]; then
-    echo "When no /sentinel/sentinal.con
+    echo "When no /sentinel/sentinal.conf is present, you must at lea
