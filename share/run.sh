@@ -30,4 +30,4 @@ if [ ! -f /sentinel/sentinel.conf ]; then
     exit 1
   fi
 
-  echo 
+  echo "gobyte_conf=/sentinel/gobyt
