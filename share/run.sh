@@ -26,4 +26,8 @@ fi
 
 if [ ! -f /sentinel/sentinel.conf ]; then
   if [ -z "$RPCHOST" ]; then
-    echo "When no /sentinel/sentinal.conf is present, you must at least set the RPCHOST environment var
+    echo "When no /sentinel/sentinal.conf is present, you must at least set the RPCHOST environment variable"
+    exit 1
+  fi
+
+  echo 
