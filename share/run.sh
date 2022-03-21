@@ -30,4 +30,5 @@ if [ ! -f /sentinel/sentinel.conf ]; then
     exit 1
   fi
 
-  echo "gobyte_conf=/sentinel/gobyte.conf" > /sentinel/sentinel.co
+  echo "gobyte_conf=/sentinel/gobyte.conf" > /sentinel/sentinel.conf
+  if [ -n "$RPCHOST" ]; th
