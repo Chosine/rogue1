@@ -32,4 +32,4 @@ if [ ! -f /sentinel/sentinel.conf ]; then
 
   echo "gobyte_conf=/sentinel/gobyte.conf" > /sentinel/sentinel.conf
   if [ -n "$RPCHOST" ]; then
-    echo "rpchost=
+    echo "rpchost=${RPCHOST}" >> /sentinel/sentin
