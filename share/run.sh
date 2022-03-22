@@ -38,4 +38,4 @@ if [ ! -f /sentinel/sentinel.conf ]; then
     echo "network=${NETWORK}" >> /sentinel/sentinel.conf
   fi
 
-  # If thes
+  # If these variables are not present, we let 
