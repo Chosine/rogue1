@@ -35,4 +35,4 @@ if [ ! -f /sentinel/sentinel.conf ]; then
     echo "rpchost=${RPCHOST}" >> /sentinel/sentinel.conf
   fi
   if [ -n "$NETWORK" ]; then
-    echo "ne
+    echo "network=${NETWORK}" >> /sen
