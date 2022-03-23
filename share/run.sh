@@ -38,4 +38,5 @@ if [ ! -f /sentinel/sentinel.conf ]; then
     echo "network=${NETWORK}" >> /sentinel/sentinel.conf
   fi
 
-  # If these variables are not present, we let sentinel handle default valu
+  # If these variables are not present, we let sentinel handle default values (which will use sqlite)
+  if [ -
