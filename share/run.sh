@@ -40,4 +40,6 @@ if [ ! -f /sentinel/sentinel.conf ]; then
 
   # If these variables are not present, we let sentinel handle default values (which will use sqlite)
   if [ -n "$DB_HOST" ]; then
-    echo "db_host=${DB_HOST}" >> /sentinel/se
+    echo "db_host=${DB_HOST}" >> /sentinel/sentinel.conf
+  fi
+  if [ -n "$DB_PORT"
