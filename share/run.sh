@@ -39,4 +39,5 @@ if [ ! -f /sentinel/sentinel.conf ]; then
   fi
 
   # If these variables are not present, we let sentinel handle default values (which will use sqlite)
-  if [ -
+  if [ -n "$DB_HOST" ]; then
+    
