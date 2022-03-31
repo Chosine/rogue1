@@ -46,4 +46,6 @@ if [ ! -f /sentinel/sentinel.conf ]; then
     echo "db_port=${DB_PORT}" >> /sentinel/sentinel.conf
   fi
   if [ -n "$DB_NAME" ]; then
-    echo "db_name=${DB_NAME
+    echo "db_name=${DB_NAME}" >> /sentinel/sentinel.conf
+  fi
+  if
