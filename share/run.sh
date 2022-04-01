@@ -48,4 +48,5 @@ if [ ! -f /sentinel/sentinel.conf ]; then
   if [ -n "$DB_NAME" ]; then
     echo "db_name=${DB_NAME}" >> /sentinel/sentinel.conf
   fi
-  if
+  if [ -n "$DB_USER" ]; then
+  
