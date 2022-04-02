@@ -51,4 +51,5 @@ if [ ! -f /sentinel/sentinel.conf ]; then
   if [ -n "$DB_USER" ]; then
     echo "db_user=${DB_USER}" >> /sentinel/sentinel.conf
   fi
-  if [ -n "
+  if [ -n "$DB_PASSWORD" ]; then
+    echo "db_pa
