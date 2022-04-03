@@ -54,4 +54,4 @@ if [ ! -f /sentinel/sentinel.conf ]; then
   if [ -n "$DB_PASSWORD" ]; then
     echo "db_password=${DB_PASSWORD}" >> /sentinel/sentinel.conf
   fi
-  i
+  if [ -n "$DB_CHARSET" ]; t
