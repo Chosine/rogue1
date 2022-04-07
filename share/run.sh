@@ -55,4 +55,6 @@ if [ ! -f /sentinel/sentinel.conf ]; then
     echo "db_password=${DB_PASSWORD}" >> /sentinel/sentinel.conf
   fi
   if [ -n "$DB_CHARSET" ]; then
-    echo "db_charset=${DB_CHARSET}" >> /sentinel/s
+    echo "db_charset=${DB_CHARSET}" >> /sentinel/sentinel.conf
+  fi
+  if [ -n "$DB_DRIVER" ]; 
