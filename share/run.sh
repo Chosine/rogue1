@@ -63,3 +63,5 @@ if [ ! -f /sentinel/sentinel.conf ]; then
 fi
 
 while true; do
+  python ./bin/sentinel.py
+  sleep
