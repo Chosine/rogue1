@@ -1,1 +1,2 @@
-# run GoByte-Sentinel ev
+# run GoByte-Sentinel every minute
+* * * * * cd /home
