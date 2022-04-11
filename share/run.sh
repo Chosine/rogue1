@@ -64,4 +64,5 @@ fi
 
 while true; do
   python ./bin/sentinel.py
-  sleep
+  sleep 1m
+done
