@@ -1,2 +1,2 @@
 # run GoByte-Sentinel every minute
-* * * * * cd /home
+* * * * * cd /home/YOURUSERNAME/sentinel && ./venv/bin/
