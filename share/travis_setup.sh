@@ -1,2 +1,6 @@
 #!/bin/bash
-set 
+set -evx
+
+mkdir ~/.gobytecore
+
+# safet
