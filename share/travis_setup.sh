@@ -3,4 +3,5 @@ set -evx
 
 mkdir ~/.gobytecore
 
-# safet
+# safety check
+if [ ! -f ~/.gobyte
