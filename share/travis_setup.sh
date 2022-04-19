@@ -4,4 +4,5 @@ set -evx
 mkdir ~/.gobytecore
 
 # safety check
-if [ ! -f ~/.gobyte
+if [ ! -f ~/.gobytecore/.gobyte.conf ]; then
+  
