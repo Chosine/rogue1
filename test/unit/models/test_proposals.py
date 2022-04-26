@@ -2,4 +2,5 @@
 import pytest
 import sys
 import os
-impor
+import time
+os.environ['SENTINEL_
