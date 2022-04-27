@@ -4,4 +4,4 @@ import sys
 import os
 import time
 os.environ['SENTINEL_ENV'] = 'test'
-os.envi
+os.environ['SENTINEL_CONFIG'] = os.path.
