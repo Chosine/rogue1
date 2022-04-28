@@ -4,4 +4,5 @@ import sys
 import os
 import time
 os.environ['SENTINEL_ENV'] = 'test'
-os.environ['SENTINEL_CONFIG'] = os.path.normpath(os.path.join(os.path.dirname(__file__), '../../test_s
+os.environ['SENTINEL_CONFIG'] = os.path.normpath(os.path.join(os.path.dirname(__file__), '../../test_sentinel.conf'))
+sys.path.appen
