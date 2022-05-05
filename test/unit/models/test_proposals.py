@@ -11,4 +11,5 @@ import config
 from models import GovernanceObject, Proposal, Vote
 
 
-# clear DB tab
+# clear DB tables before each execution
+def setup():
