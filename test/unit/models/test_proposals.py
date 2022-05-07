@@ -14,4 +14,6 @@ from models import GovernanceObject, Proposal, Vote
 # clear DB tables before each execution
 def setup():
     # clear tables first
-    Vote.delete().execute
+    Vote.delete().execute()
+    Proposal.delete().execute()
+    G
