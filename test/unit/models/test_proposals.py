@@ -16,4 +16,4 @@ def setup():
     # clear tables first
     Vote.delete().execute()
     Proposal.delete().execute()
-    G
+    GovernanceObject.delete(
