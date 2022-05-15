@@ -23,4 +23,5 @@ def teardown():
     pass
 
 
-# list of propos
+# list of proposal govobjs to import for testing
+@py
