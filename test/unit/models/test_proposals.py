@@ -24,4 +24,5 @@ def teardown():
 
 
 # list of proposal govobjs to import for testing
-@py
+@pytest.fixture
+def go_l
