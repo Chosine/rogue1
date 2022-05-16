@@ -27,4 +27,4 @@ def teardown():
 @pytest.fixture
 def go_list_proposals():
     items = [
-   
+        {u'AbsoluteYesCou
