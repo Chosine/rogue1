@@ -27,4 +27,5 @@ def teardown():
 @pytest.fixture
 def go_list_proposals():
     items = [
-        {u'AbsoluteYesCou
+        {u'AbsoluteYesCount': 1000,
+         u'AbstainCount
