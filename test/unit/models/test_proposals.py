@@ -25,4 +25,6 @@ def teardown():
 
 # list of proposal govobjs to import for testing
 @pytest.fixture
-def go_l
+def go_list_proposals():
+    items = [
+   
