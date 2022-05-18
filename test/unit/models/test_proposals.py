@@ -28,4 +28,5 @@ def teardown():
 def go_list_proposals():
     items = [
         {u'AbsoluteYesCount': 1000,
-         u'AbstainCount
+         u'AbstainCount': 7,
+         u'Collater
