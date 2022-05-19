@@ -29,4 +29,4 @@ def go_list_proposals():
     items = [
         {u'AbsoluteYesCount': 1000,
          u'AbstainCount': 7,
-         u'Collater
+         u'CollateralHash': u'acb67ec3f3566c9b94a2
