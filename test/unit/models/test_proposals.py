@@ -35,3 +35,5 @@ def go_list_proposals():
          u'Hash': u'dfd7d63979c0b62456b63d5fc5306dbec451180adee85876cbf5b28c69d1a86c',
          u'IsValidReason': u'',
          u'NoCount': 25,
+         u'YesCount': 1025,
+ 
