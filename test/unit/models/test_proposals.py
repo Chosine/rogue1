@@ -36,4 +36,5 @@ def go_list_proposals():
          u'IsValidReason': u'',
          u'NoCount': 25,
          u'YesCount': 1025,
-         u'fBlockchainValidit
+         u'fBlockchainValidity': True,
+         u'fCachedDel
