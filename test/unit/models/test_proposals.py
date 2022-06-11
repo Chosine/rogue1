@@ -37,4 +37,5 @@ def go_list_proposals():
          u'NoCount': 25,
          u'YesCount': 1025,
          u'fBlockchainValidity': True,
-         u'fCachedDel
+         u'fCachedDelete': False,
+         u'fCa
