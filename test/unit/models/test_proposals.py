@@ -41,4 +41,4 @@ def go_list_proposals():
          u'fCachedEndorsed': False,
          u'fCachedFunding': False,
          u'fCachedValid': True},
-  
+        {u'AbsoluteYesCount
