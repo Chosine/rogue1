@@ -42,4 +42,5 @@ def go_list_proposals():
          u'fCachedFunding': False,
          u'fCachedValid': True},
         {u'AbsoluteYesCount': 1000,
-         u'AbstainCount':
+         u'AbstainCount': 29,
+         u'CollateralHash': 
