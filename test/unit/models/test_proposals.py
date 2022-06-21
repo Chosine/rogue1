@@ -43,4 +43,4 @@ def go_list_proposals():
          u'fCachedValid': True},
         {u'AbsoluteYesCount': 1000,
          u'AbstainCount': 29,
-         u'CollateralHash': u'3efd23283aa98c2c33f80e4d9e
+         u'CollateralHash': u'3efd23283aa98c2c33f80e4d9ed6f277d195b72547b6491f43280380f
