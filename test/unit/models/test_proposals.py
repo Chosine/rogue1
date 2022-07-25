@@ -50,3 +50,4 @@ def go_list_proposals():
          u'IsValidReason': u'',
          u'NoCount': 56,
          u'YesCount': 1056,
+         u'fBlockchainValidity':
