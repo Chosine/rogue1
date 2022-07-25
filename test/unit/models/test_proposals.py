@@ -48,4 +48,5 @@ def go_list_proposals():
          u'DataString': u'[["proposal", {"end_epoch": 2122520400, "name": "fernandez-7625", "payment_address": "yYe8KwyaUu5YswSYmB3q3ryx8XTUu9y7Ui", "payment_amount": 25.75, "start_epoch": 1474261086, "type": 1, "url": "http://gobytecentral.org/fernandez-7625"}]]',
          u'Hash': u'0523445762025b2e01a2cd34f1d10f4816cf26ee1796167e5b029901e5873630',
          u'IsValidReason': u'',
-         u'NoCount': 5
+         u'NoCount': 56,
+         u'YesCount': 1056,
