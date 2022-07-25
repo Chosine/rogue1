@@ -53,4 +53,5 @@ def go_list_proposals():
          u'fBlockchainValidity': True,
          u'fCachedDelete': False,
          u'fCachedEndorsed': False,
-         u'fCachedFun
+         u'fCachedFunding': False,
+         u'fCac
