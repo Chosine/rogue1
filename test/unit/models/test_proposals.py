@@ -66,4 +66,5 @@ def proposal():
     # NOTE: no governance_object_id is set
     pobj = Proposal(
         start_epoch=1483250400,  # 2017-01-01
-        end_epoch=212
+        end_epoch=2122520400,
+        name="wine-n-che
