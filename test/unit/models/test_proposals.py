@@ -67,4 +67,5 @@ def proposal():
     pobj = Proposal(
         start_epoch=1483250400,  # 2017-01-01
         end_epoch=2122520400,
-        name="wine-n-che
+        name="wine-n-cheeze-party",
+        url="https:/
