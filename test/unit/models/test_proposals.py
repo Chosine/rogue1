@@ -57,4 +57,8 @@ def go_list_proposals():
          u'fCachedValid': True},
     ]
 
-    
+    return items
+
+
+# Proposal
+@py
