@@ -64,4 +64,5 @@ def go_list_proposals():
 @pytest.fixture
 def proposal():
     # NOTE: no governance_object_id is set
-    
+    pobj = Proposal(
+        start_ep
