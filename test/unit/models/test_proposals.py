@@ -63,4 +63,5 @@ def go_list_proposals():
 # Proposal
 @pytest.fixture
 def proposal():
-    # NOTE: no governa
+    # NOTE: no governance_object_id is set
+    
