@@ -61,4 +61,5 @@ def go_list_proposals():
 
 
 # Proposal
-@py
+@pytest.fixture
+def proposa
