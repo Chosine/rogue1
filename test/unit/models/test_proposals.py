@@ -65,4 +65,4 @@ def go_list_proposals():
 def proposal():
     # NOTE: no governance_object_id is set
     pobj = Proposal(
-        start_ep
+        start_epoch=1483250400,  # 2017-01-01
