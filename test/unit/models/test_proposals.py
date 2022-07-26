@@ -62,4 +62,5 @@ def go_list_proposals():
 
 # Proposal
 @pytest.fixture
-def proposa
+def proposal():
+    # NOTE: no governa
