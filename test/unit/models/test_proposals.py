@@ -54,4 +54,7 @@ def go_list_proposals():
          u'fCachedDelete': False,
          u'fCachedEndorsed': False,
          u'fCachedFunding': False,
-         u'fCac
+         u'fCachedValid': True},
+    ]
+
+    
