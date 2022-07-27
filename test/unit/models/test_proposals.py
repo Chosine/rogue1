@@ -74,4 +74,4 @@ def proposal():
     )
 
     # NOTE: this object is (intentionally) not saved yet.
-    #       We wa
+    #       We want to return an built, but unsaved,
