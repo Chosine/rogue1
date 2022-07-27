@@ -73,4 +73,4 @@ def proposal():
         payment_amount=13
     )
 
-    # NOTE: this
+    # NOTE: this object is (intentionally) not sav
