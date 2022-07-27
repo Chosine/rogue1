@@ -69,4 +69,4 @@ def proposal():
         end_epoch=2122520400,
         name="wine-n-cheeze-party",
         url="https://gobytecentral.com/wine-n-cheeze-party",
-    
+        payment_address="yYe8KwyaU
