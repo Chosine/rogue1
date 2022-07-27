@@ -73,4 +73,5 @@ def proposal():
         payment_amount=13
     )
 
-    # NOTE: this object is (intentionally) not sav
+    # NOTE: this object is (intentionally) not saved yet.
+    #       We wa
