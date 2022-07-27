@@ -70,4 +70,7 @@ def proposal():
         name="wine-n-cheeze-party",
         url="https://gobytecentral.com/wine-n-cheeze-party",
         payment_address="yYe8KwyaUu5YswSYmB3q3ryx8XTUu9y7Ui",
-        pa
+        payment_amount=13
+    )
+
+    # NOTE: this
