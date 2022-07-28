@@ -78,4 +78,4 @@ def proposal():
     return pobj
 
 
-def te
+def test_proposal_is_valid(pro
