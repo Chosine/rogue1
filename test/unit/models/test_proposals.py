@@ -79,4 +79,5 @@ def proposal():
 
 
 def test_proposal_is_valid(proposal):
-    from gobyted impo
+    from gobyted import GoByteDaemon
+    import gobytelib
