@@ -78,4 +78,5 @@ def proposal():
     return pobj
 
 
-def test_proposal_is_valid(pro
+def test_proposal_is_valid(proposal):
+    from gobyted impo
