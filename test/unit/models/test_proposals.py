@@ -83,4 +83,6 @@ def test_proposal_is_valid(proposal):
     import gobytelib
     gobyted = GoByteDaemon.from_gobyte_conf(config.gobyte_conf)
 
-    orig = Proposal(**proposal.get_dict())  # mak
+    orig = Proposal(**proposal.get_dict())  # make a copy
+
+    # fixture as-is should 
