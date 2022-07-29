@@ -81,4 +81,6 @@ def proposal():
 def test_proposal_is_valid(proposal):
     from gobyted import GoByteDaemon
     import gobytelib
-    gobyted = GoByteDaemon.from_gobyte_conf(config.go
+    gobyted = GoByteDaemon.from_gobyte_conf(config.gobyte_conf)
+
+    orig = Propo
