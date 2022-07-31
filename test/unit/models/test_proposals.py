@@ -88,4 +88,4 @@ def test_proposal_is_valid(proposal):
     # fixture as-is should be valid
     assert proposal.is_valid() is True
 
-    # =======
+    # ======================================
