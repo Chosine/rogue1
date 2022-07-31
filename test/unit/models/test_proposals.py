@@ -89,4 +89,4 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is True
 
     # ============================================================
-    # en
+    # ensure end_date not gre
