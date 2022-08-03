@@ -91,4 +91,4 @@ def test_proposal_is_valid(proposal):
     # ============================================================
     # ensure end_date not greater than start_date
     # ============================================================
-    proposal
+    proposal.end_epoch = proposal.start_epo
