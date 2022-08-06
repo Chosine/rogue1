@@ -97,4 +97,4 @@ def test_proposal_is_valid(proposal):
     proposal.end_epoch = proposal.start_epoch - 1
     assert proposal.is_valid() is False
 
-    proposal.end_e
+    proposal.end_epoch = proposal.start_
