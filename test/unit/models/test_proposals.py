@@ -107,4 +107,5 @@ def test_proposal_is_valid(proposal):
     proposal = Proposal(**orig.get_dict())
 
     # ============================================================
- 
+    # ensure valid proposal name
+    
