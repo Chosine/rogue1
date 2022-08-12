@@ -105,3 +105,5 @@ def test_proposal_is_valid(proposal):
 
     # reset
     proposal = Proposal(**orig.get_dict())
+
+    # ======================
