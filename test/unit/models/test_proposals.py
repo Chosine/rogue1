@@ -113,4 +113,4 @@ def test_proposal_is_valid(proposal):
     proposal.name = '   heya!@209h '
     assert proposal.is_valid() is False
 
-    proposal.n
+    proposal.name = "anything' OR 'x'='
