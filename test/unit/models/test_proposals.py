@@ -110,4 +110,4 @@ def test_proposal_is_valid(proposal):
     # ensure valid proposal name
     # ============================================================
 
- 
+    proposal.name = '   heya!@2
