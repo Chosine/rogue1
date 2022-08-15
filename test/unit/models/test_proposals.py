@@ -114,4 +114,6 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is False
 
     proposal.name = "anything' OR 'x'='x"
-    assert proposal.is_
+    assert proposal.is_valid() is False
+
+    prop
