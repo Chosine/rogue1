@@ -128,4 +128,5 @@ def test_proposal_is_valid(proposal):
     proposal.name = 'R66-Y'
     assert proposal.is_valid() is True
 
-    proposal.name = '
+    proposal.name = 'valid-name'
+    assert propo
