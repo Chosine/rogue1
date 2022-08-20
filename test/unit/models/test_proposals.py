@@ -131,4 +131,5 @@ def test_proposal_is_valid(proposal):
     proposal.name = 'valid-name'
     assert proposal.is_valid() is True
 
-    proposal.name = '   mostly-valid-
+    proposal.name = '   mostly-valid-name'
+    assert proposal.is_
