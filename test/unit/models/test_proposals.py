@@ -137,4 +137,5 @@ def test_proposal_is_valid(proposal):
     proposal.name = 'also-mostly-valid-name   '
     assert proposal.is_valid() is False
 
-    proposal.name = ' similarly-ki
+    proposal.name = ' similarly-kinda-valid-name '
+    assert
