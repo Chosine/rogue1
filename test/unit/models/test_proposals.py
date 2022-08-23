@@ -140,4 +140,5 @@ def test_proposal_is_valid(proposal):
     proposal.name = ' similarly-kinda-valid-name '
     assert proposal.is_valid() is False
 
-    proposal.name = 'dean m
+    proposal.name = 'dean miller 5493'
+    assert proposal.
