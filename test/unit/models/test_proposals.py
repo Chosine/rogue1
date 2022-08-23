@@ -143,4 +143,5 @@ def test_proposal_is_valid(proposal):
     proposal.name = 'dean miller 5493'
     assert proposal.is_valid() is False
 
-    propo
+    proposal.name = 'dean-millerà-5493'
+   
