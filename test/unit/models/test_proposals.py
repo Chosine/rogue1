@@ -149,4 +149,5 @@ def test_proposal_is_valid(proposal):
     proposal.name = 'dean-миллер-5493'
     assert proposal.is_valid() is False
 
-    # binary 
+    # binary gibberish
+    proposal.name = gobytelib
