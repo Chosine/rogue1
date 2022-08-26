@@ -150,4 +150,4 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is False
 
     # binary gibberish
-    proposal.name = gobytelib.deserialise('22385c7530303933375c7
+    proposal.name = gobytelib.deserialise('22385c7530303933375c75303363375c75303232395c753031
