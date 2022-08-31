@@ -154,4 +154,6 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is False
 
     # reset
-    proposal = 
+    proposal = Proposal(**orig.get_dict())
+
+    # 
