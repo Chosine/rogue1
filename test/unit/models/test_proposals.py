@@ -158,4 +158,4 @@ def test_proposal_is_valid(proposal):
 
     # ============================================================
     # ensure valid payment address
-    # ==
+    # ====================================
