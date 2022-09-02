@@ -157,4 +157,5 @@ def test_proposal_is_valid(proposal):
     proposal = Proposal(**orig.get_dict())
 
     # ============================================================
-    # ensure v
+    # ensure valid payment address
+    # ==
