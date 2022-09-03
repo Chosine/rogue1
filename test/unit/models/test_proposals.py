@@ -160,4 +160,4 @@ def test_proposal_is_valid(proposal):
     # ensure valid payment address
     # ============================================================
     proposal.payment_address = '7'
-    ass
+    assert proposal.is_valid() is Fal
