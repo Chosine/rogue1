@@ -171,4 +171,4 @@ def test_proposal_is_valid(proposal):
     proposal.payment_address = '221 B Baker St., London, United Kingdom'
     assert proposal.is_valid() is False
 
-    # this is actually the 
+    # this is actually the GoByte foundation multisig address...
