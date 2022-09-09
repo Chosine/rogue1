@@ -169,4 +169,6 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is False
 
     proposal.payment_address = '221 B Baker St., London, United Kingdom'
-    assert proposal.is_valid() is F
+    assert proposal.is_valid() is False
+
+    # this is actually the 
