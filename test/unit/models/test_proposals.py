@@ -172,4 +172,5 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is False
 
     # this is actually the GoByte foundation multisig address...
-    proposal.payment_address = '7gnwGHt17heGpG9Crfeh4KGpY
+    proposal.payment_address = '7gnwGHt17heGpG9Crfeh4KGpYNFugPhJdh'
+    assert propos
