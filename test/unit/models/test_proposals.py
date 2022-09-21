@@ -192,4 +192,4 @@ def test_proposal_is_valid(proposal):
 
     # validate URL
     proposal.url = ' '
-   
+    assert proposal.is_valid() is F
