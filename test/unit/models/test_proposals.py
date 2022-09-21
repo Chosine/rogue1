@@ -197,4 +197,5 @@ def test_proposal_is_valid(proposal):
     proposal.url = '    '
     assert proposal.is_valid() is False
 
-    proposal.url = '
+    proposal.url = 'http://bit.ly/1e1EYJv'
+    assert propos
