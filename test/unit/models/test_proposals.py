@@ -212,4 +212,5 @@ def test_proposal_is_valid(proposal):
     proposal.url = 'http://::12.34.56.78]/'
     assert proposal.is_valid() is False
 
-    proposal.url = 'http://[::1/foo/bad]/bad
+    proposal.url = 'http://[::1/foo/bad]/bad'
+    assert proposal.is_valid() is
