@@ -218,4 +218,4 @@ def test_proposal_is_valid(proposal):
     proposal.url = 'http://gobytecentral.org/dean-miller 5493'
     assert proposal.is_valid() is False
 
-    proposal.url = 'h
+    proposal.url = 'http://gobytecentralisé.org/dean-mil
