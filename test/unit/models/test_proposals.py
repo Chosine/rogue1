@@ -222,4 +222,6 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is True
 
     proposal.url = 'http://gobytecentralisé.org/dean-миллер-5493'
-    assert proposal.
+    assert proposal.is_valid() is True
+
+  
