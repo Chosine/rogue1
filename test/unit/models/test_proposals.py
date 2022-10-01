@@ -227,4 +227,5 @@ def test_proposal_is_valid(proposal):
     proposal.url = 'https://example.com/resource.ext?param=1&other=2'
     assert proposal.is_valid() is True
 
-   
+    proposal.url = 'www.com'
+    assert 
