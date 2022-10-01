@@ -228,4 +228,4 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is True
 
     proposal.url = 'www.com'
-    assert 
+    assert proposal.is_valid() is 
