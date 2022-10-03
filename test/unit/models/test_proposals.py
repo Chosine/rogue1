@@ -236,4 +236,4 @@ def test_proposal_is_valid(proposal):
     proposal.url = 'ipfs:///ipfs/QmPwwoytFU3gZYk5tSppumxaGbHymMUgHsSvrBdQH69XRx/'
     assert proposal.is_valid() is True
 
-    proposa
+    proposal.url = '/ipfs/QmPwwoytFU3gZYk5t
