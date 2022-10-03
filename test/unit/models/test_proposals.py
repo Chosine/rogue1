@@ -239,4 +239,4 @@ def test_proposal_is_valid(proposal):
     proposal.url = '/ipfs/QmPwwoytFU3gZYk5tSppumxaGbHymMUgHsSvrBdQH69XRx/'
     assert proposal.is_valid() is True
 
-    proposal.url = 
+    proposal.url = 's3://bucket/thing/a
