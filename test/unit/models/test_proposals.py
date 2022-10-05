@@ -242,4 +242,5 @@ def test_proposal_is_valid(proposal):
     proposal.url = 's3://bucket/thing/anotherthing/file.pdf'
     assert proposal.is_valid() is True
 
-    proposal.url = 'http://zqktlwi4fecvo6ri.
+    proposal.url = 'http://zqktlwi4fecvo6ri.onion/wiki/index.php/Main_Page'
+ 
