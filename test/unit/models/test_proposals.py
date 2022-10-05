@@ -240,4 +240,6 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is True
 
     proposal.url = 's3://bucket/thing/anotherthing/file.pdf'
-    assert proposal.is_valid() i
+    assert proposal.is_valid() is True
+
+    proposal.url =
