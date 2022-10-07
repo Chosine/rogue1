@@ -248,4 +248,5 @@ def test_proposal_is_valid(proposal):
     proposal.url = 'ftp://ftp.funet.fi/pub/standards/RFC/rfc959.txt'
     assert proposal.is_valid() is True
 
-   
+    # gibberish URL
+    pr
