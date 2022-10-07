@@ -249,4 +249,4 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is True
 
     # gibberish URL
-    proposal.url = gobytelib.deserial
+    proposal.url = gobytelib.deserialise('22687474703a2f2f5c7
