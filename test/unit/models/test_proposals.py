@@ -246,4 +246,6 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is True
 
     proposal.url = 'ftp://ftp.funet.fi/pub/standards/RFC/rfc959.txt'
-    assert p
+    assert proposal.is_valid() is True
+
+   
