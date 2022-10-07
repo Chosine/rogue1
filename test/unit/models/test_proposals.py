@@ -245,4 +245,5 @@ def test_proposal_is_valid(proposal):
     proposal.url = 'http://zqktlwi4fecvo6ri.onion/wiki/index.php/Main_Page'
     assert proposal.is_valid() is True
 
-    proposal.url = 'ftp://ftp.funet.fi/pub/standar
+    proposal.url = 'ftp://ftp.funet.fi/pub/standards/RFC/rfc959.txt'
+    assert p
