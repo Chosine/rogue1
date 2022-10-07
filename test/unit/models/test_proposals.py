@@ -249,4 +249,4 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is True
 
     # gibberish URL
-    pr
+    proposal.url = gobytelib.deserial
