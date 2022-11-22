@@ -258,4 +258,5 @@ def test_proposal_is_valid(proposal):
     # ============================================================
     # ensure proposal can't request negative gobyte
     # ============================================================
-    proposal.payment_amount
+    proposal.payment_amount = -1
+    assert proposal.is_val
