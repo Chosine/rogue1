@@ -262,4 +262,4 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is False
 
 
-def test_propo
+def test_proposal_is_expired(proposal
