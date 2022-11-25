@@ -266,4 +266,5 @@ def test_proposal_is_expired(proposal):
     cycle = 24  # testnet
     now = misc.now()
 
-    proposal.start_epoch = now - 
+    proposal.start_epoch = now - (86400 * 2)  # two days ago
+    propos
