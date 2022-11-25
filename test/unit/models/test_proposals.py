@@ -267,4 +267,5 @@ def test_proposal_is_expired(proposal):
     now = misc.now()
 
     proposal.start_epoch = now - (86400 * 2)  # two days ago
-    proposal.end_epoch = now - (60 * 60)
+    proposal.end_epoch = now - (60 * 60)  # expired one hour ago
+  
