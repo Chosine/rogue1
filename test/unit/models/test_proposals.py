@@ -268,4 +268,4 @@ def test_proposal_is_expired(proposal):
 
     proposal.start_epoch = now - (86400 * 2)  # two days ago
     proposal.end_epoch = now - (60 * 60)  # expired one hour ago
-    assert proposal.is_expired(s
+    assert proposal.is_expired(superblockcycle=cycle) is F
