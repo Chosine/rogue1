@@ -262,4 +262,5 @@ def test_proposal_is_valid(proposal):
     assert proposal.is_valid() is False
 
 
-def test_proposal_is_expired(proposal
+def test_proposal_is_expired(proposal):
+    cycle = 24  # testnet
