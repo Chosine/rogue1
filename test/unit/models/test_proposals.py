@@ -275,4 +275,4 @@ def test_proposal_is_expired(proposal):
     assert proposal.is_expired(superblockcycle=cycle) is False
 
     proposal.end_epoch = now - 9087
-    asser
+    assert proposal.is_expired(superblo
