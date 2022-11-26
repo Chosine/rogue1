@@ -276,3 +276,6 @@ def test_proposal_is_expired(proposal):
 
     proposal.end_epoch = now - 9087
     assert proposal.is_expired(superblockcycle=cycle) is True
+
+
+# deterministic ordering
