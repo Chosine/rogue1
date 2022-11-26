@@ -279,3 +279,4 @@ def test_proposal_is_expired(proposal):
 
 
 # deterministic ordering
+def test_approved_and_r
