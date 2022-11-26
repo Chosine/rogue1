@@ -270,4 +270,5 @@ def test_proposal_is_expired(proposal):
     proposal.end_epoch = now - (60 * 60)  # expired one hour ago
     assert proposal.is_expired(superblockcycle=cycle) is False
 
-    # fudge factor + a 24-block cycle == an expiry 
+    # fudge factor + a 24-block cycle == an expiry window of 9086, so...
+    pro
