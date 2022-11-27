@@ -280,4 +280,5 @@ def test_proposal_is_expired(proposal):
 
 # deterministic ordering
 def test_approved_and_ranked(go_list_proposals):
-    from gobyted import GoByteDa
+    from gobyted import GoByteDaemon
+    gobyted = GoByteDaemon.
