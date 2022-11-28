@@ -284,4 +284,4 @@ def test_approved_and_ranked(go_list_proposals):
     gobyted = GoByteDaemon.from_gobyte_conf(config.gobyte_conf)
 
     for item in go_list_proposals:
-        (go, subobj) = GovernanceObject.import_gob
+        (go, subobj) = GovernanceObject.import_gobject_from_gobyted(gobyted, item)
