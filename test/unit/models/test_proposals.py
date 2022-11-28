@@ -286,4 +286,6 @@ def test_approved_and_ranked(go_list_proposals):
     for item in go_list_proposals:
         (go, subobj) = GovernanceObject.import_gobject_from_gobyted(gobyted, item)
 
-    prop_list = Proposal.approved_and_ranked(proposal_quorum=1, next_superblock_max_b
+    prop_list = Proposal.approved_and_ranked(proposal_quorum=1, next_superblock_max_budget=60)
+
+    assert prop_l
