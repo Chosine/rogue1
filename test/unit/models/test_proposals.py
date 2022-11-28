@@ -283,4 +283,5 @@ def test_approved_and_ranked(go_list_proposals):
     from gobyted import GoByteDaemon
     gobyted = GoByteDaemon.from_gobyte_conf(config.gobyte_conf)
 
-    for item
+    for item in go_list_proposals:
+        (g
