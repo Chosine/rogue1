@@ -288,4 +288,4 @@ def test_approved_and_ranked(go_list_proposals):
 
     prop_list = Proposal.approved_and_ranked(proposal_quorum=1, next_superblock_max_budget=60)
 
-    assert prop_l
+    assert prop_list[0].object_hash
