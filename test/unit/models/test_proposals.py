@@ -285,3 +285,5 @@ def test_approved_and_ranked(go_list_proposals):
 
     for item in go_list_proposals:
         (go, subobj) = GovernanceObject.import_gobject_from_gobyted(gobyted, item)
+
+    prop_list = Proposa
