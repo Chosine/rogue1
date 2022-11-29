@@ -288,4 +288,5 @@ def test_approved_and_ranked(go_list_proposals):
 
     prop_list = Proposal.approved_and_ranked(proposal_quorum=1, next_superblock_max_budget=60)
 
-    assert prop_list[0].object_hash == u'dfd7d63979c0b62456b63d5fc5306dbec451180adee85876cbf5b28c69d1a86
+    assert prop_list[0].object_hash == u'dfd7d63979c0b62456b63d5fc5306dbec451180adee85876cbf5b28c69d1a86c'
+    assert prop_list[1].object_ha
