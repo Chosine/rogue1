@@ -293,4 +293,4 @@ def test_approved_and_ranked(go_list_proposals):
 
 
 def test_proposal_size(proposal):
-    orig = Propos
+    orig = Proposal(**proposal.get_dict())  # make a
