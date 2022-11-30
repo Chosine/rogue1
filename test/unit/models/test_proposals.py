@@ -292,4 +292,5 @@ def test_approved_and_ranked(go_list_proposals):
     assert prop_list[1].object_hash == u'0523445762025b2e01a2cd34f1d10f4816cf26ee1796167e5b029901e5873630'
 
 
-def test_proposal
+def test_proposal_size(proposal):
+    orig = Propos
