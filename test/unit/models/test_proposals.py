@@ -296,4 +296,6 @@ def test_proposal_size(proposal):
     orig = Proposal(**proposal.get_dict())  # make a copy
 
     proposal.url = 'https://testurl.com/'
-    proposal_length_bytes = len(propo
+    proposal_length_bytes = len(proposal.serialise()) // 2
+
+    # h
