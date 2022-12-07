@@ -298,4 +298,5 @@ def test_proposal_size(proposal):
     proposal.url = 'https://testurl.com/'
     proposal_length_bytes = len(proposal.serialise()) // 2
 
-    # how much space is available in
+    # how much space is available in the Proposal
+    extra_byt
