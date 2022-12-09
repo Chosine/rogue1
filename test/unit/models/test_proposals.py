@@ -301,4 +301,4 @@ def test_proposal_size(proposal):
     # how much space is available in the Proposal
     extra_bytes = (Proposal.MAX_DATA_SIZE - proposal_length_bytes)
 
-    # fill
+    # fill URL field with max remaining sp
