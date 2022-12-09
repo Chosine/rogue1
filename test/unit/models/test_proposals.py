@@ -299,4 +299,4 @@ def test_proposal_size(proposal):
     proposal_length_bytes = len(proposal.serialise()) // 2
 
     # how much space is available in the Proposal
-    extra_byt
+    extra_bytes = (Proposal.MAX_DATA_SIZE - proposal
