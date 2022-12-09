@@ -304,4 +304,4 @@ def test_proposal_size(proposal):
     # fill URL field with max remaining space
     proposal.url = proposal.url + ('x' * extra_bytes)
 
-    #
+    # ensure this is the max proposal 
