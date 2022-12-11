@@ -306,4 +306,4 @@ def test_proposal_size(proposal):
 
     # ensure this is the max proposal size and is valid
     assert (len(proposal.serialise()) // 2) == Proposal.MAX_DATA_SIZE
-    
+    assert proposal.is_valid() i
