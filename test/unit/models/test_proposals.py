@@ -305,4 +305,5 @@ def test_proposal_size(proposal):
     proposal.url = proposal.url + ('x' * extra_bytes)
 
     # ensure this is the max proposal size and is valid
-    assert (len(proposal.serialise()) 
+    assert (len(proposal.serialise()) // 2) == Proposal.MAX_DATA_SIZE
+    
