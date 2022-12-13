@@ -309,4 +309,5 @@ def test_proposal_size(proposal):
     assert proposal.is_valid() is True
 
     # add one more character to URL, Proposal should now be invalid
-    propos
+    proposal.url = proposal.url + 'x'
+ 
