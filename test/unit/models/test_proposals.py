@@ -308,4 +308,5 @@ def test_proposal_size(proposal):
     assert (len(proposal.serialise()) // 2) == Proposal.MAX_DATA_SIZE
     assert proposal.is_valid() is True
 
-    # add one more character to URL, Proposal sh
+    # add one more character to URL, Proposal should now be invalid
+    propos
