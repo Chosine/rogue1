@@ -310,4 +310,4 @@ def test_proposal_size(proposal):
 
     # add one more character to URL, Proposal should now be invalid
     proposal.url = proposal.url + 'x'
- 
+    assert (len(proposal.serialise
