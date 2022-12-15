@@ -310,4 +310,5 @@ def test_proposal_size(proposal):
 
     # add one more character to URL, Proposal should now be invalid
     proposal.url = proposal.url + 'x'
-    assert (len(proposal.serialise()) // 2) == (Proposal.MAX_DATA
+    assert (len(proposal.serialise()) // 2) == (Proposal.MAX_DATA_SIZE + 1)
+    assert pr
