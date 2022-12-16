@@ -90,3 +90,34 @@ def go_list_superblocks():
          u'YesCount': 1,
          u'fBlockchainValidity': True,
          u'fCachedDelete': False,
+         u'fCachedEndorsed': False,
+         u'fCachedFunding': False,
+         u'fCachedValid': True},
+        {u'AbsoluteYesCount': 1,
+         u'AbstainCount': 0,
+         u'CollateralHash': u'0000000000000000000000000000000000000000000000000000000000000000',
+         u'DataHex': u'5b5b2274726967676572222c207b226576656e745f626c6f636b5f686569676874223a2037323639362c20227061796d656e745f616464726573736573223a2022795965384b77796155753559737753596d42337133727978385854557539793755697c795965384b77796155753559737753596d4233713372797838585455753979375569222c20227061796d656e745f616d6f756e7473223a202232352e37353030303030307c32352e3735303030303030222c202274797065223a20327d5d5d',
+         u'DataString': u'[["trigger", {"event_block_height": 72696, "payment_addresses": "yYe8KwyaUu5YswSYmB3q3ryx8XTUu9y7Ui|yYe8KwyaUu5YswSYmB3q3ryx8XTUu9y7Ui", "payment_amounts": "25.75000000|25.75000000", "type": 2}]]',
+         u'Hash': u'bc2834f357da7504138566727c838e6ada74d079e63b6104701f4f8eb05dae36',
+         u'IsValidReason': u'',
+         u'NoCount': 0,
+         u'YesCount': 1,
+         u'fBlockchainValidity': True,
+         u'fCachedDelete': False,
+         u'fCachedEndorsed': False,
+         u'fCachedFunding': False,
+         u'fCachedValid': True},
+    ]
+
+    return items
+
+
+@pytest.fixture
+def superblock():
+    sb = Superblock(
+        event_block_height=62500,
+        payment_addresses='yYe8KwyaUu5YswSYmB3q3ryx8XTUu9y7Ui|yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV',
+        payment_amounts='5|3',
+        proposal_hashes='e8a0057914a2e1964ae8a945c4723491caae2077a90a00a2aabee22b40081a87|d1ce73527d7cd6f2218f8ca893990bc7d5c6b9334791ce7973bfa22f155f826e',
+    )
+    return sb
