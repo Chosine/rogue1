@@ -121,3 +121,38 @@ def superblock():
         proposal_hashes='e8a0057914a2e1964ae8a945c4723491caae2077a90a00a2aabee22b40081a87|d1ce73527d7cd6f2218f8ca893990bc7d5c6b9334791ce7973bfa22f155f826e',
     )
     return sb
+
+
+def test_superblock_is_valid(superblock):
+    from gobyted import GoByteDaemon
+    gobyted = GoByteDaemon.from_gobyte_conf(config.gobyte_conf)
+
+    orig = Superblock(**superblock.get_dict())  # make a copy
+
+    # original as-is should be valid
+    assert orig.is_valid() is True
+
+    # mess with payment amounts
+    superblock.payment_amounts = '7|yyzx'
+    assert superblock.is_valid() is False
+
+    superblock.payment_amounts = '7,|yzx'
+    assert superblock.is_valid() is False
+
+    superblock.payment_amounts = '7|8'
+    assert superblock.is_valid() is True
+
+    superblock.payment_amounts = ' 7|8'
+    assert superblock.is_valid() is False
+
+    superblock.payment_amounts = '7|8 '
+    assert superblock.is_valid() is False
+
+    superblock.payment_amounts = ' 7|8 '
+    assert superblock.is_valid() is False
+
+    # reset
+    superblock = Superblock(**orig.get_dict())
+    assert superblock.is_valid() is True
+
+    # mess with payment addresses
