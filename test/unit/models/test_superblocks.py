@@ -192,3 +192,24 @@ def test_superblock_is_valid(superblock):
     superblock.payment_addresses = 'yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV'
     superblock.payment_amounts = '-37.00'
     assert superblock.is_valid() is False
+
+    # reset
+    superblock = Superblock(**orig.get_dict())
+    assert superblock.is_valid() is True
+
+    # mess with proposal hashes
+    superblock.proposal_hashes = '7|yyzx'
+    assert superblock.is_valid() is False
+
+    superblock.proposal_hashes = '7,|yyzx'
+    assert superblock.is_valid() is False
+
+    superblock.proposal_hashes = '0|1'
+    assert superblock.is_valid() is False
+
+    superblock.proposal_hashes = '0000000000000000000000000000000000000000000000000000000000000000|1111111111111111111111111111111111111111111111111111111111111111'
+    assert superblock.is_valid() is True
+
+    # reset
+    superblock = Superblock(**orig.get_dict())
+    assert superblock.is_valid() is True
