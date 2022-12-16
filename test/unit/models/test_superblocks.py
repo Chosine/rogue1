@@ -156,3 +156,39 @@ def test_superblock_is_valid(superblock):
     assert superblock.is_valid() is True
 
     # mess with payment addresses
+    superblock.payment_addresses = 'yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV|1234 Anywhere ST, Chicago, USA'
+    assert superblock.is_valid() is False
+
+    # leading spaces in payment addresses
+    superblock.payment_addresses = ' yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV'
+    superblock.payment_amounts = '5.00'
+    assert superblock.is_valid() is False
+
+    # trailing spaces in payment addresses
+    superblock.payment_addresses = 'yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV '
+    superblock.payment_amounts = '5.00'
+    assert superblock.is_valid() is False
+
+    # leading & trailing spaces in payment addresses
+    superblock.payment_addresses = ' yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV '
+    superblock.payment_amounts = '5.00'
+    assert superblock.is_valid() is False
+
+    # single payment addr/amt is ok
+    superblock.payment_addresses = 'yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV'
+    superblock.payment_amounts = '5.00'
+    assert superblock.is_valid() is True
+
+    # ensure number of payment addresses matches number of payments
+    superblock.payment_addresses = 'yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV'
+    superblock.payment_amounts = '37.00|23.24'
+    assert superblock.is_valid() is False
+
+    superblock.payment_addresses = 'yYe8KwyaUu5YswSYmB3q3ryx8XTUu9y7Ui|yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV'
+    superblock.payment_amounts = '37.00'
+    assert superblock.is_valid() is False
+
+    # ensure amounts greater than zero
+    superblock.payment_addresses = 'yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV'
+    superblock.payment_amounts = '-37.00'
+    assert superblock.is_valid() is False
