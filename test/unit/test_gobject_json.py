@@ -45,3 +45,29 @@ def test_valid_json():
         binascii.unhexlify(proposal_hex_old())
     ) is True
     assert gobject_json.valid_json(
+        binascii.unhexlify(proposal_hex_new())
+    ) is True
+    assert gobject_json.valid_json(
+        binascii.unhexlify(trigger_hex_new())
+    ) is True
+    assert gobject_json.valid_json(
+        binascii.unhexlify(trigger_hex_old())
+    ) is True
+
+    # test some invalid/bad/not JSON
+    assert gobject_json.valid_json("False") is False
+    assert gobject_json.valid_json("True") is False
+    assert gobject_json.valid_json("Null") is False
+    assert gobject_json.valid_json("NULL") is False
+    assert gobject_json.valid_json("nil") is False
+    assert gobject_json.valid_json("rubbish") is False
+    assert gobject_json.valid_json("{{}") is False
+    assert gobject_json.valid_json("") is False
+
+    poorly_formatted = trigger_hex_old() + "7d"
+    assert gobject_json.valid_json(
+        binascii.unhexlify(poorly_formatted)
+    ) is False
+
+
+def test_extract_object():
