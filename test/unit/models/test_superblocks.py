@@ -213,3 +213,24 @@ def test_superblock_is_valid(superblock):
     # reset
     superblock = Superblock(**orig.get_dict())
     assert superblock.is_valid() is True
+
+
+def test_serialisable_fields():
+    s1 = ['event_block_height', 'payment_addresses', 'payment_amounts', 'proposal_hashes']
+    s2 = Superblock.serialisable_fields()
+
+    s1.sort()
+    s2.sort()
+
+    assert s2 == s1
+
+
+def test_deterministic_superblock_creation(go_list_proposals):
+    import gobytelib
+    import misc
+    from gobyted import GoByteDaemon
+    gobyted = GoByteDaemon.from_gobyte_conf(config.gobyte_conf)
+    for item in go_list_proposals:
+        (go, subobj) = GovernanceObject.import_gobject_from_gobyted(gobyted, item)
+
+    max_budget = 60
