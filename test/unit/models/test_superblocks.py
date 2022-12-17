@@ -234,3 +234,25 @@ def test_deterministic_superblock_creation(go_list_proposals):
         (go, subobj) = GovernanceObject.import_gobject_from_gobyted(gobyted, item)
 
     max_budget = 60
+    prop_list = Proposal.approved_and_ranked(proposal_quorum=1, next_superblock_max_budget=max_budget)
+
+    sb = gobytelib.create_superblock(prop_list, 72000, max_budget, misc.now())
+
+    assert sb.event_block_height == 72000
+    assert sb.payment_addresses == 'yYe8KwyaUu5YswSYmB3q3ryx8XTUu9y7Ui|yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV'
+    assert sb.payment_amounts == '25.75000000|32.01000000'
+    assert sb.proposal_hashes == 'dfd7d63979c0b62456b63d5fc5306dbec451180adee85876cbf5b28c69d1a86c|0523445762025b2e01a2cd34f1d10f4816cf26ee1796167e5b029901e5873630'
+
+    assert sb.hex_hash() == 'bb3f33ccf95415c396bd09d35325dbcbc7b067010d51c7ccf772a9e839c1e414'
+
+
+def test_deterministic_superblock_selection(go_list_superblocks):
+    from gobyted import GoByteDaemon
+    gobyted = GoByteDaemon.from_gobyte_conf(config.gobyte_conf)
+
+    for item in go_list_superblocks:
+        (go, subobj) = GovernanceObject.import_gobject_from_gobyted(gobyted, item)
+
+    # highest hash wins if same -- so just order by hash
+    sb = Superblock.find_highest_deterministic('542f4433e438bdd64697b8381fda1a7a9b7a111c3a4e32fad524d1821d820394')
+    assert sb.object_hash == 'bc2834f357da7504138566727c838e6ada74d079e63b6104701f4f8eb05dae36'
