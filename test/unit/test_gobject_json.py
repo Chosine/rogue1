@@ -71,3 +71,33 @@ def test_valid_json():
 
 
 def test_extract_object():
+    from decimal import Decimal
+    import binascii
+
+    # jack sparrow needs a new ship - same expected proposal data for both new &
+    # old formats
+    expected = {
+        'type': 1,
+        'name': 'jack-sparrow-new-ship',
+        'url': 'https://www.gobytecentral.org/black-pearl',
+        'start_epoch': 1521429194,
+        'end_epoch': 1547183994,
+        'payment_address': 'yYe8KwyaUu5YswSYmB3q3ryx8XTUu9y7Ui',
+        'payment_amount': Decimal('49'),
+    }
+
+    # test proposal old format
+    json_str = binascii.unhexlify(proposal_hex_old()).decode('utf-8')
+    assert gobject_json.extract_object(json_str) == expected
+
+    # test proposal new format
+    json_str = binascii.unhexlify(proposal_hex_new()).decode('utf-8')
+    assert gobject_json.extract_object(json_str) == expected
+
+    # same expected trigger data for both new & old formats
+    expected = {
+        'type': 2,
+        'event_block_height': 62500,
+        'payment_addresses': 'yYe8KwyaUu5YswSYmB3q3ryx8XTUu9y7Ui|yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV',
+        'payment_amounts': '5|3',
+    }
