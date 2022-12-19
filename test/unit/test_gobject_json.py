@@ -101,3 +101,11 @@ def test_extract_object():
         'payment_addresses': 'yYe8KwyaUu5YswSYmB3q3ryx8XTUu9y7Ui|yTC62huR4YQEPn9AJHjnQxxreHSbgAoatV',
         'payment_amounts': '5|3',
     }
+
+    # test trigger old format
+    json_str = binascii.unhexlify(trigger_hex_old()).decode('utf-8')
+    assert gobject_json.extract_object(json_str) == expected
+
+    # test trigger new format
+    json_str = binascii.unhexlify(trigger_hex_new()).decode('utf-8')
+    assert gobject_json.extract_object(json_str) == expected
