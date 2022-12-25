@@ -13,4 +13,5 @@ from gobyte_config import GoByteConfig
 def gobyte_conf(**kwargs):
     defaults = {
         'rpcuser': 'gobyterpc',
-        'rpcpassword': 'EwJeV3fZTyTVozdECF627
+        'rpcpassword': 'EwJeV3fZTyTVozdECF627BkBMnNDwQaVLakG3A4wXYyk',
+      
