@@ -16,3 +16,5 @@ def gobyte_conf(**kwargs):
         'rpcpassword': 'EwJeV3fZTyTVozdECF627BkBMnNDwQaVLakG3A4wXYyk',
         'rpcport': 29241,
     }
+
+    # merge kwargs into def
