@@ -12,4 +12,5 @@ from gobyte_config import GoByteConfig
 @pytest.fixture
 def gobyte_conf(**kwargs):
     defaults = {
-        'rpcuser': 'go
+        'rpcuser': 'gobyterpc',
+        'rpcpassword': '
