@@ -10,4 +10,5 @@ from gobyte_config import GoByteConfig
 
 
 @pytest.fixture
-def gobyte_conf
+def gobyte_conf(**kwargs):
+    default
