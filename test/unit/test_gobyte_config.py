@@ -11,4 +11,5 @@ from gobyte_config import GoByteConfig
 
 @pytest.fixture
 def gobyte_conf(**kwargs):
-    default
+    defaults = {
+        'rpcuser': 'go
