@@ -17,4 +17,5 @@ def gobyte_conf(**kwargs):
         'rpcport': 29241,
     }
 
-    # merge kwargs into def
+    # merge kwargs into defaults
+    for (key, value) in kwargs.i
