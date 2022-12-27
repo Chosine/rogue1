@@ -28,4 +28,9 @@ rpcuser={rpcuser}
 rpcpassword={rpcpassword}
 rpcallowip=127.0.0.1
 rpcport={rpcport}
-""".format(**d
+""".format(**defaults)
+
+    return conf
+
+
+def tes
