@@ -26,4 +26,5 @@ testnet=1 # TESTNET
 server=1
 rpcuser={rpcuser}
 rpcpassword={rpcpassword}
-rpcallowip=12
+rpcallowip=127.0.0.1
+rpcport={rp
