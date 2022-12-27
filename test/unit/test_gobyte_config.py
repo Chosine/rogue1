@@ -18,4 +18,5 @@ def gobyte_conf(**kwargs):
     }
 
     # merge kwargs into defaults
-    for (key, value) in kwargs.i
+    for (key, value) in kwargs.items():
+        defaults[k
