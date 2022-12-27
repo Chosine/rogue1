@@ -25,3 +25,5 @@ def gobyte_conf(**kwargs):
 testnet=1 # TESTNET
 server=1
 rpcuser={rpcuser}
+rpcpassword={rpcpassword}
+rpcallowip=12
