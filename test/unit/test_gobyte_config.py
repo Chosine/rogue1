@@ -27,4 +27,5 @@ server=1
 rpcuser={rpcuser}
 rpcpassword={rpcpassword}
 rpcallowip=127.0.0.1
-rpcport={rp
+rpcport={rpcport}
+""".format(**d
