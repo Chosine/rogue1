@@ -21,4 +21,5 @@ def gobyte_conf(**kwargs):
     for (key, value) in kwargs.items():
         defaults[key] = value
 
-    c
+    conf = """# basic settings
+testnet=1
