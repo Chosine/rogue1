@@ -22,4 +22,6 @@ def gobyte_conf(**kwargs):
         defaults[key] = value
 
     conf = """# basic settings
-testnet=1
+testnet=1 # TESTNET
+server=1
+rpcuser={rpcuser}
