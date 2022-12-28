@@ -33,4 +33,5 @@ rpcport={rpcport}
     return conf
 
 
-def tes
+def test_get_rpc_creds():
+    gob
