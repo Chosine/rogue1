@@ -34,4 +34,4 @@ rpcport={rpcport}
 
 
 def test_get_rpc_creds():
-    gob
+    gobyte_config = gobyte_conf()
