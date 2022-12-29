@@ -37,4 +37,5 @@ def test_get_rpc_creds():
     gobyte_config = gobyte_conf()
     creds = GoByteConfig.get_rpc_creds(gobyte_config, 'testnet')
 
-    for key in ('user', 'password', 'port')
+    for key in ('user', 'password', 'port'):
+        assert key in creds
