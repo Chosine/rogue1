@@ -35,4 +35,6 @@ rpcport={rpcport}
 
 def test_get_rpc_creds():
     gobyte_config = gobyte_conf()
-    creds = GoByteConfig.get_rpc_creds(gobyte_config, 'testnet'
+    creds = GoByteConfig.get_rpc_creds(gobyte_config, 'testnet')
+
+    for key in ('use
