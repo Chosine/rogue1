@@ -41,4 +41,6 @@ def test_get_rpc_creds():
         assert key in creds
     assert creds.get('user') == 'gobyterpc'
     assert creds.get('password') == 'EwJeV3fZTyTVozdECF627BkBMnNDwQaVLakG3A4wXYyk'
-    assert creds.get('po
+    assert creds.get('port') == 29241
+
+    gobyte_config
