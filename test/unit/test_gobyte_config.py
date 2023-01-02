@@ -43,4 +43,4 @@ def test_get_rpc_creds():
     assert creds.get('password') == 'EwJeV3fZTyTVozdECF627BkBMnNDwQaVLakG3A4wXYyk'
     assert creds.get('port') == 29241
 
-    gobyte_config = gobyte_conf(rp
+    gobyte_config = gobyte_conf(rpcpassword='s00pers33kr1t', rpcport=80
