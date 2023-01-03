@@ -48,4 +48,4 @@ def test_get_rpc_creds():
 
     for key in ('user', 'password', 'port'):
         assert key in creds
-    a
+    assert creds.get('user') == 
