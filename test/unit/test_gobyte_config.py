@@ -53,4 +53,4 @@ def test_get_rpc_creds():
     assert creds.get('port') == 8000
 
     no_port_specified = re.sub('\nrpcport=.*?\n', '\n', gobyte_conf(), re.M)
-    creds = 
+    creds = GoByteConfig.get_rpc_creds(no_por
