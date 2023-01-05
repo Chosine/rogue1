@@ -52,4 +52,5 @@ def test_get_rpc_creds():
     assert creds.get('password') == 's00pers33kr1t'
     assert creds.get('port') == 8000
 
-    no_port_specified = re.sub('\nrpcport=.*?\n', '\n', gobyte_
+    no_port_specified = re.sub('\nrpcport=.*?\n', '\n', gobyte_conf(), re.M)
+    creds = 
