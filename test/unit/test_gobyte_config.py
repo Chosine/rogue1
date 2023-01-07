@@ -59,4 +59,7 @@ def test_get_rpc_creds():
         assert key in creds
     assert creds.get('user') == 'gobyterpc'
     assert creds.get('password') == 'EwJeV3fZTyTVozdECF627BkBMnNDwQaVLakG3A4wXYyk'
-    assert creds.
+    assert creds.get('port') == 19998
+
+
+def test_slurp_config_file
