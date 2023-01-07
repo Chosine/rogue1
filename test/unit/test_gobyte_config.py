@@ -58,4 +58,4 @@ def test_get_rpc_creds():
     for key in ('user', 'password', 'port'):
         assert key in creds
     assert creds.get('user') == 'gobyterpc'
-    a
+    assert creds.get('pass
