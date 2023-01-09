@@ -66,4 +66,6 @@ def test_slurp_config_file():
     import tempfile
 
     gobyte_config = """# basic settings
-#testnet=1 # TESTN
+#testnet=1 # TESTNET
+server=1
+printtoconsol
