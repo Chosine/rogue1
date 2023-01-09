@@ -65,4 +65,5 @@ def test_get_rpc_creds():
 def test_slurp_config_file():
     import tempfile
 
-    gobyte_config = """# basic set
+    gobyte_config = """# basic settings
+#testnet=1 # TESTN
