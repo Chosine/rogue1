@@ -65,4 +65,4 @@ def test_get_rpc_creds():
 def test_slurp_config_file():
     import tempfile
 
-    goby
+    gobyte_config = """# basic set
