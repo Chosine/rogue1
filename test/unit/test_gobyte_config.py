@@ -68,4 +68,5 @@ def test_slurp_config_file():
     gobyte_config = """# basic settings
 #testnet=1 # TESTNET
 server=1
-printtoconsol
+printtoconsole=1
+txindex=1 # enable transaction
