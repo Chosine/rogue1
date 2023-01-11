@@ -69,4 +69,7 @@ def test_slurp_config_file():
 #testnet=1 # TESTNET
 server=1
 printtoconsole=1
-txindex=1 # enable transaction
+txindex=1 # enable transaction index
+"""
+
+    expected_strippe
