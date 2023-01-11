@@ -73,4 +73,5 @@ txindex=1 # enable transaction index
 """
 
     expected_stripped_config = """server=1
-printt
+printtoconsole=1
+txindex=1 # enable transacti
