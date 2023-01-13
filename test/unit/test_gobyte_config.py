@@ -77,4 +77,4 @@ printtoconsole=1
 txindex=1 # enable transaction index
 """
 
-    with tempfil
+    with tempfile.NamedTemporaryFile(mode='w') 
