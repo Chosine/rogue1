@@ -77,4 +77,5 @@ printtoconsole=1
 txindex=1 # enable transaction index
 """
 
-    with tempfile.NamedTemporaryFile(mode='w') 
+    with tempfile.NamedTemporaryFile(mode='w') as temp:
+        temp.write(gobyte
