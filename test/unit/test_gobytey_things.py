@@ -54,3 +54,38 @@ def mn_status_bad():
     status = {
         "vin": "CTxIn(COutPoint(0000000000000000000000000000000000000000000000000000000000000000, 4294967295), coinbase )",
         "service": "[::]:0",
+        "status": "Node just started, not yet activated"
+    }
+    return status
+
+
+# ========================================================================
+
+
+def test_valid_gobyte_address():
+    from gobytelib import is_valid_gobyte_address
+
+    main = valid_gobyte_address()
+    test = valid_gobyte_address('testnet')
+
+    assert is_valid_gobyte_address(main) is True
+    assert is_valid_gobyte_address(main, 'mainnet') is True
+    assert is_valid_gobyte_address(main, 'testnet') is False
+
+    assert is_valid_gobyte_address(test) is False
+    assert is_valid_gobyte_address(test, 'mainnet') is False
+    assert is_valid_gobyte_address(test, 'testnet') is True
+
+
+def test_invalid_gobyte_address():
+    from gobytelib import is_valid_gobyte_address
+
+    main = invalid_gobyte_address()
+    test = invalid_gobyte_address('testnet')
+
+    assert is_valid_gobyte_address(main) is False
+    assert is_valid_gobyte_address(main, 'mainnet') is False
+    assert is_valid_gobyte_address(main, 'testnet') is False
+
+    assert is_valid_gobyte_address(test) is False
+    assert is_valid_gobyte_address(test, 'mainnet') is False
