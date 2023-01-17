@@ -89,3 +89,29 @@ def test_invalid_gobyte_address():
 
     assert is_valid_gobyte_address(test) is False
     assert is_valid_gobyte_address(test, 'mainnet') is False
+    assert is_valid_gobyte_address(test, 'testnet') is False
+
+
+def test_deterministic_masternode_elections(current_block_hash, mn_list):
+    winner = elect_mn(block_hash=current_block_hash, mnlist=mn_list)
+    assert winner == 'f68a2e5d64f4a9be7ff8d0fbd9059dcd3ce98ad7a19a9260d1d6709127ffac56-1'
+
+    winner = elect_mn(block_hash='00000056bcd579fa3dc9a1ee41e8124a4891dcf2661aa3c07cc582bfb63b52b9', mnlist=mn_list)
+    assert winner == '656695ed867e193490261bea74783f0a39329ff634a10a9fb6f131807eeca744-1'
+
+
+def test_deterministic_masternode_elections(current_block_hash, mn_list):
+    from gobytelib import elect_mn
+
+    winner = elect_mn(block_hash=current_block_hash, mnlist=mn_list)
+    assert winner == 'f68a2e5d64f4a9be7ff8d0fbd9059dcd3ce98ad7a19a9260d1d6709127ffac56-1'
+
+    winner = elect_mn(block_hash='00000056bcd579fa3dc9a1ee41e8124a4891dcf2661aa3c07cc582bfb63b52b9', mnlist=mn_list)
+    assert winner == '656695ed867e193490261bea74783f0a39329ff634a10a9fb6f131807eeca744-1'
+
+
+def test_parse_masternode_status_vin():
+    from gobytelib import parse_masternode_status_vin
+    status = mn_status_good()
+    vin = parse_masternode_status_vin(status['vin'])
+    assert vin == 'f68a2e5d64f4a9be7ff8d0fbd9059dcd3ce98ad7a19a9260d1d6709127ffac56-1'
