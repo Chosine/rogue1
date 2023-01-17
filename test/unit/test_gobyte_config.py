@@ -81,3 +81,4 @@ txindex=1 # enable transaction index
         temp.write(gobyte_config)
         temp.flush()
         conf = GoByteConfig.slurp_config_file(temp.name)
+        assert conf == expect
