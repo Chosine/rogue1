@@ -80,3 +80,4 @@ txindex=1 # enable transaction index
     with tempfile.NamedTemporaryFile(mode='w') as temp:
         temp.write(gobyte_config)
         temp.flush()
+        conf = GoByteConfig.slur
