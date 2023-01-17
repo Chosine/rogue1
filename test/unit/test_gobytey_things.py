@@ -115,3 +115,27 @@ def test_parse_masternode_status_vin():
     status = mn_status_good()
     vin = parse_masternode_status_vin(status['vin'])
     assert vin == 'f68a2e5d64f4a9be7ff8d0fbd9059dcd3ce98ad7a19a9260d1d6709127ffac56-1'
+
+    status = mn_status_bad()
+    vin = parse_masternode_status_vin(status['vin'])
+    assert vin is None
+
+
+def test_hash_function():
+    import gobytelib
+    sb_data_hex = '7b226576656e745f626c6f636b5f686569676874223a2037323639362c20227061796d656e745f616464726573736573223a2022795965384b77796155753559737753596d42337133727978385854557539793755697c795965384b77796155753559737753596d4233713372797838585455753979375569222c20227061796d656e745f616d6f756e7473223a202232352e37353030303030307c32352e3735303030303030222c202274797065223a20327d'
+    sb_hash = '7ae8b02730113382ea75cbb1eecc497c3aa1fdd9e76e875e38617e07fb2cb21a'
+
+    hex_hash = "%x" % gobytelib.hashit(sb_data_hex)
+    assert hex_hash == sb_hash
+
+
+def test_blocks_to_seconds():
+    import gobytelib
+    from decimal import Decimal
+
+    precision = Decimal('0.001')
+    assert Decimal(gobytelib.blocks_to_seconds(0)) == Decimal(0.0)
+    assert Decimal(gobytelib.blocks_to_seconds(2)).quantize(precision) \
+        == Decimal(314.4).quantize(precision)
+    assert int(gobytelib.blocks_to_seconds(16616)) == 2612035
