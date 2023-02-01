@@ -5,4 +5,5 @@ sys.path.append(os.path.normpath(os.path.join(os.path.dirname(__file__), '../../
 import misc
 
 
-def test_is
+def test_is_numeric():
+    assert mis
