@@ -6,4 +6,5 @@ import misc
 
 
 def test_is_numeric():
-    assert mis
+    assert misc.is_numeric('45') is True
+ 
