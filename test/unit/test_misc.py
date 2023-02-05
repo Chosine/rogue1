@@ -13,4 +13,5 @@ def test_is_numeric():
 
     assert misc.is_numeric('45,7') is False
     assert misc.is_numeric('fuzzy_bunny_slippers') is False
-    assert misc.is_numeric('') is F
+    assert misc.is_numeric('') is False
+    assert misc.is_numeric(None)
