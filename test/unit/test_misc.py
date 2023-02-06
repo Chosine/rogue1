@@ -16,4 +16,4 @@ def test_is_numeric():
     assert misc.is_numeric('') is False
     assert misc.is_numeric(None) is False
     assert misc.is_numeric(False) is False
-    assert misc.is_nume
+    assert misc.is_numeric(True) is False
