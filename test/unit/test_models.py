@@ -1,4 +1,4 @@
 import pytest
 import os
 import sys
-os.envi
+os.environ['SENTINEL_CONFIG'] = os.path.nor
