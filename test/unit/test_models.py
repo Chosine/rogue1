@@ -15,4 +15,5 @@ def proposal():
 
 
 def test_proposal(proposal):
-    d = p
+    d = proposal.get_dict()
+    assert is
