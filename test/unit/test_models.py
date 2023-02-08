@@ -10,4 +10,5 @@ sys.path.append(os.path.normpath(os.path.join(os.path.dirname(__file__), '../../
 # Proposal model
 @pytest.fixture
 def proposal():
-    from model
+    from models import Proposal
+    r
