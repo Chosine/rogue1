@@ -14,4 +14,5 @@ def proposal():
     return Proposal()
 
 
-def 
+def test_proposal(proposal):
+    d = p
