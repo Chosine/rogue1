@@ -20,4 +20,6 @@ def test_proposal(proposal):
 
     fields = [
         'type',
-       
+        'name',
+        'url',
+        'star
