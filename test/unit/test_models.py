@@ -22,4 +22,5 @@ def test_proposal(proposal):
         'type',
         'name',
         'url',
-        'star
+        'start_epoch',
+        'end_epoch',
