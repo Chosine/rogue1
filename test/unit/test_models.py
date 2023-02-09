@@ -16,4 +16,6 @@ def proposal():
 
 def test_proposal(proposal):
     d = proposal.get_dict()
-    assert is
+    assert isinstance(d, dict)
+
+    fields = 
