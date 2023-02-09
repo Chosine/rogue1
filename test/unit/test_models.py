@@ -18,4 +18,6 @@ def test_proposal(proposal):
     d = proposal.get_dict()
     assert isinstance(d, dict)
 
-    fields = 
+    fields = [
+        'type',
+       
