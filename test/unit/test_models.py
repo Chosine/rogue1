@@ -25,3 +25,5 @@ def test_proposal(proposal):
         'start_epoch',
         'end_epoch',
         'payment_address',
+        'payment_amount',
+    
