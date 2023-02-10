@@ -28,4 +28,5 @@ def test_proposal(proposal):
         'payment_amount',
     ]
     fields.sort()
-    sorte
+    sorted_keys = sorted(d.keys())
+    asser
