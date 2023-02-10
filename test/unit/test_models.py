@@ -26,4 +26,6 @@ def test_proposal(proposal):
         'end_epoch',
         'payment_address',
         'payment_amount',
-    
+    ]
+    fields.sort()
+    sorte
