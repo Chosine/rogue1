@@ -32,4 +32,5 @@ def test_proposal(proposal):
     assert sorted_keys == fields
 
 
-#
+# GovernanceObject model
+@pytes
