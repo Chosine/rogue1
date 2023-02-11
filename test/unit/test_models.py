@@ -33,4 +33,5 @@ def test_proposal(proposal):
 
 
 # GovernanceObject model
-@pytes
+@pytest.fixture
+def governance_object(
