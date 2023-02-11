@@ -29,4 +29,7 @@ def test_proposal(proposal):
     ]
     fields.sort()
     sorted_keys = sorted(d.keys())
-    asser
+    assert sorted_keys == fields
+
+
+#
