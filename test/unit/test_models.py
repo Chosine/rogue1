@@ -36,3 +36,5 @@ def test_proposal(proposal):
 @pytest.fixture
 def governance_object():
     from models import GovernanceObject
+    return GovernanceObject()
+
