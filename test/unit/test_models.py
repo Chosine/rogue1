@@ -38,3 +38,5 @@ def governance_object():
     from models import GovernanceObject
     return GovernanceObject()
 
+
+def test_governance_object(governan
