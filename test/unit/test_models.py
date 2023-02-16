@@ -39,4 +39,5 @@ def governance_object():
     return GovernanceObject()
 
 
-def test_governance_object(governan
+def test_governance_object(governance_object):
+    d = governanc
