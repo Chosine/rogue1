@@ -40,4 +40,5 @@ def governance_object():
 
 
 def test_governance_object(governance_object):
-    d = governanc
+    d = governance_object._meta.columns
+ 
