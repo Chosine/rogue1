@@ -46,4 +46,5 @@ def test_governance_object(governance_object):
     fields = [
         'id',
         'parent_id',
-        'ob
+        'object_creation_time',
+        'objec
