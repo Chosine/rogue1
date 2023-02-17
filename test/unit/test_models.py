@@ -43,4 +43,6 @@ def test_governance_object(governance_object):
     d = governance_object._meta.columns
     assert isinstance(d, dict)
 
- 
+    fields = [
+        'id',
+        'p
