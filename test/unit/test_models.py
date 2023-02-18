@@ -50,4 +50,5 @@ def test_governance_object(governance_object):
         'object_hash',
         'object_parent_hash',
         'object_type',
-        
+        'object_revision',
+        'object_fee_
