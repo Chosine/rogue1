@@ -47,4 +47,5 @@ def test_governance_object(governance_object):
         'id',
         'parent_id',
         'object_creation_time',
-        'objec
+        'object_hash',
+        'object_parent_has
