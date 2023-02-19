@@ -52,4 +52,6 @@ def test_governance_object(governance_object):
         'object_type',
         'object_revision',
         'object_fee_tx',
-        'yes_count'
+        'yes_count',
+        'no_count',
+       
