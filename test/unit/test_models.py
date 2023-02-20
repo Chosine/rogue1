@@ -55,4 +55,7 @@ def test_governance_object(governance_object):
         'yes_count',
         'no_count',
         'abstain_count',
-        'ab
+        'absolute_yes_count',
+    ]
+
+  
