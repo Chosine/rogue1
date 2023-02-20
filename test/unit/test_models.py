@@ -54,4 +54,5 @@ def test_governance_object(governance_object):
         'object_fee_tx',
         'yes_count',
         'no_count',
-       
+        'abstain_count',
+        'ab
