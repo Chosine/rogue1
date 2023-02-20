@@ -58,4 +58,5 @@ def test_governance_object(governance_object):
         'absolute_yes_count',
     ]
 
-  
+    fields.sort()
+    sorted_k
