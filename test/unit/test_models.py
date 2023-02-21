@@ -60,4 +60,4 @@ def test_governance_object(governance_object):
 
     fields.sort()
     sorted_keys = sorted(d.keys())
-    assert
+    assert sorted_keys == fields
